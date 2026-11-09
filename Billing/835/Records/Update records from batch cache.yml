@@ -1,0 +1,27 @@
+info:
+  name: Update records from batch cache
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/billing/835/records/96f53418-eb56-438e-8506-4457f190e2e7"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  body:
+    type: json
+    data: |
+      {
+        "units": 5,
+        "modifier1": "UN"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

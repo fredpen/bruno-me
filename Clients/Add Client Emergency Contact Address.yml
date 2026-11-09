@@ -1,0 +1,35 @@
+info:
+  name: Add Client Emergency Contact Address
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{baseUrl}}/clients/emergency-contact/b01ccf5b-98d7-4908-864e-88e2aae7cc49/address"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "addressType": "Home",
+          "addressIsPrimary": true,
+          "addressLine1": "456 Maple Ave",
+          "addressLine2": "Suite 101",
+          "county": "Montgomery",
+          "city": "Rockville",
+          "state": "MD",
+          "zip": "20850",
+          "addressLongitude": -77.1528,
+          "addressLatitude": 39.0839
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,31 @@
+info:
+  name: Start Unknown Visit
+  type: http
+  seq: 21
+
+http:
+  method: POST
+  url: "{{baseUrl}}/visits/start"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "clientId": "{{clientID}}",
+        "serviceType": "T2025:TE",
+        "location": "home",
+        "latitude": 40.4406,
+        "longitude": -79.9959
+      }
+  auth:
+    type: bearer
+    token: "{{mobileToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

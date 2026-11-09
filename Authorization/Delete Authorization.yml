@@ -1,0 +1,22 @@
+info:
+  name: Delete Authorization
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/authorizations/162e1193-3831-4f36-b32a-86111050f026"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

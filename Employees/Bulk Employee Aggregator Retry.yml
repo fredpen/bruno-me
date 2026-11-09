@@ -1,0 +1,26 @@
+info:
+  name: Bulk Employee Aggregator Retry
+  type: http
+  seq: 27
+
+http:
+  method: POST
+  url: "{{baseUrl}}/employees/retry-processing/bulk"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "employeeIds": ["411b2263-8451-471b-8476-6f0cde9d6d94", "82c72bed-3180-4748-ae01-b53838d34e6f"]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

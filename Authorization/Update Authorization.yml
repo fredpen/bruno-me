@@ -1,0 +1,58 @@
+info:
+  name: Update Authorization
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/authorizations/162e1193-3831-4f36-b32a-86111050f026"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "providerName": "Oakwood Community Living",
+          "clientDistrictCode": "SW",
+          "wellskyCaseNo": "84219",
+          "clientAHCCCSId": "A58810942",
+          "clientId": "0094715388",
+          "clientLastName": "GARCIA",
+          "clientFirstName": "MARIA",
+          "eligibility": "DDD",
+          "clientDiagnosis": "G40.3",
+          "clientDiagnosisDescription": "Generalized idiopathic epilepsy",
+          "focusAuthId": "4109832",
+          "wellSkyAuthId": "4081174",
+          "authStatus": "Approved",
+          "focusServiceCode": "RSP",
+          "serviceCode": "H2016",
+          "description": "RESPITE CARE SERVICES, WAIVER; PER 15 MINUTES",
+          "authStartDate": "2024-10-15",
+          "authEndDate": "2025-10-14",
+          "unitType": "15 mins",
+          "authorizedUnits": "1850",
+          "paidUnits": "212",
+          "availableUnits": "1638",
+          "clientWorker": "DAVIS, ROBERT",
+          "insuranceInfo": "Future",
+          "azeipTeamLeadId": "Future",
+          "ahcccsVendorDemographicVendorName": "Future",
+          "supportCoordinator1": "Future",
+          "clientDOB": "2012-05-22",
+          "clientGender": "F",
+          "clientAddress1": "872 W Willow Ave Apt 304",
+          "clientCity": "FLAGSTAFF",
+          "clientState": "AZ",
+          "clientZip": "86001-2045"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

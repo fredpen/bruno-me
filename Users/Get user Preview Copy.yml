@@ -1,0 +1,20 @@
+info:
+  name: Get user Preview Copy
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{baseUrl}}/users/preview/mobile-link-issues"
+  headers:
+    - name: x-client-api-key
+      value: default
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Retrieves the details of a specific user by their ID.

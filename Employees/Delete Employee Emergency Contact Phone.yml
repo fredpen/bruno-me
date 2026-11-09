@@ -1,0 +1,27 @@
+info:
+  name: Delete Employee Emergency Contact Phone
+  type: http
+  seq: 12
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/employees/emergency-contact/5d551e07-9c04-49fa-8d5b-e1fd53635470/phone"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "phoneType": "Home",
+          "phone": "+44234455554"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

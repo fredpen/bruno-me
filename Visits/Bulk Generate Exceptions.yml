@@ -1,0 +1,29 @@
+info:
+  name: Bulk Generate Exceptions
+  type: http
+  seq: 17
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/visits/check-exception/bulk"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "visitIds": [
+              "ab8e9114-d277-4271-8b13-62295645db10",
+              "09dc2b5e-c99f-480b-8f01-08e2031182ab"
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

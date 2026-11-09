@@ -1,0 +1,32 @@
+info:
+  name: Get recent reminders
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/visit-reminders/recent?employeeId=118913e7-7565-48b0-bbf7-9021b8d13711"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: visitId
+      value: "{{visitId}}"
+      type: query
+      disabled: true
+    - name: employeeId
+      value: "{{employeeId}}"
+      type: query
+      disabled: true
+    - name: employeeId
+      value: 118913e7-7565-48b0-bbf7-9021b8d13711
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

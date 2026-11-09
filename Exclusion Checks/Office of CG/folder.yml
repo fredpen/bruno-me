@@ -1,0 +1,7 @@
+info:
+  name: Office of CG
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

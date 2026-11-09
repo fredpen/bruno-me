@@ -1,0 +1,39 @@
+name: AZ Staging
+color: "#CE4F3B"
+variables:
+  - name: baseUrl
+    value: https://nexvzt-beta.fly.dev
+  - name: email
+    value: pottervilletestuser@yopmail.com
+  - name: password
+    value: 6lgRJi@XWt
+  - secret: true
+    name: token
+  - name: agencyId
+    value: NX48772
+  - name: staffId
+    value: ""
+  - name: visitId
+    value: ""
+  - name: employeeId
+    value: ae990c5a-b78f-4e67-b87e-9bb9e51df38a
+  - name: goalId
+    value: ""
+  - name: clientApiKey
+    value: default
+  - name: billingProfileId
+    value: ""
+  - name: progressID
+    value: ""
+  - name: mobileToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwODg0MTkzYy1iNzhiLTQ1NzUtYmRiZi0zZmU5NTRmMThkNjkiLCJlbWFpbCI6ImZvbGFkaXB1cG9AcG90dGVybmV4LmNvbSIsImlzTW9iaWxlVXNlciI6dHJ1ZSwiaWF0IjoxNzgwNDc5NDM1LCJleHAiOjE3ODA1NjU4MzV9.g6NWDajiDDsY2nV27ctmRKLQ_G5a0C0Y2h7z7JChJSU
+  - name: goalId2
+    value: ""
+  - name: templateId
+    value: ""
+  - name: clientId
+    value: 5feae031-9e80-4b3d-82b3-223abe6329a3
+  - name: mobileEmail
+    value: foladipupo@potternex.com
+  - name: mobilePassword
+    value: "&Fm8evCZM&"

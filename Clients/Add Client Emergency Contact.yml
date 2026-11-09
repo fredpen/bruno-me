@@ -1,0 +1,35 @@
+info:
+  name: Add Client Emergency Contact
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl}}/clients/e4992180-a8d2-41c6-8149-5f7f515951ea/emergency-contact"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |
+      {
+        "type": "Parent",
+        "relationship": "Father",
+        "firstName": "John",
+        "middleName": "A.",
+        "lastName": "Doe",
+        "language": "English",
+        "emailAddress": "john.doe@example.com",
+        "title": "Sir",
+        "dob": "21-02-2021",
+        "gender": "female"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,34 @@
+name: Pen -PROD
+variables:
+  - name: baseUrl
+    value: https://nxtvzt-penn.fly.dev
+  - name: email
+    value: admin@potternex.com
+  - name: password
+    value: Potternex@pvc1
+  - name: token
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlNDNkNzRhOC0xMzc5LTQyY2YtYTNlNi1mNzI0NmI1NzJlMjkiLCJlbWFpbCI6ImFkbWluQHBvdHRlcm5leC5jb20iLCJpYXQiOjE3ODk1OTA2ODMsImV4cCI6MTc5MDE5NTQ4M30.oYJupQBIVlta2HA4Hla3AvO-WIZQbWfOl__7JMbiPAM
+  - name: agencyId
+    value: NX66630
+  - name: staffId
+    value: ""
+  - name: visitId
+    value: 794c7d70-6d60-4147-a749-3ce2f5609b9c
+  - name: employeeId
+    value: cd909eae-a02e-411b-9711-83875e4e60ec
+  - name: goalId
+    value: ""
+  - name: clientApiKey
+    value: default
+  - name: billingProfileId
+    value: 8703303f-1ecd-4fc5-b4af-19cb4931d424
+  - name: progressID
+    value: ""
+  - name: mobileToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZTBiN2NkZC1mZDczLTQyNzAtOGFlZC0wYjI4OGM4NDVmMTMiLCJlbWFpbCI6InRvY2hpdGVzdEB5b3BtYWlsLmNvbSIsImlzTW9iaWxlVXNlciI6dHJ1ZSwiaWF0IjoxNzgwNDc1MTYxLCJleHAiOjE3ODA1NjE1NjF9.Zz6XrOPnPLiRbImHNwCdWUfjP9NicA4PC9q7pyRqueM
+  - name: goalId2
+    value: ""
+  - name: templateId
+    value: ""
+  - name: deviceId
+    value: 2a13b758-7b86-417e-a84a-baf15e778f68

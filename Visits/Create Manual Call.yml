@@ -1,0 +1,28 @@
+info:
+  name: Create Manual Call
+  type: http
+  seq: 28
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/visits/4ea76b27-3c9f-4e40-9652-5af57445e0c6/call"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "callTime": "14:30:00",
+        "callDate": "2024-02-13",
+        "clientId": "c1e234cf-1441-4435-8027-a87e10352a41",
+        "employeeId": "84485a29-75fb-445a-9825-c753dcec5ca4",
+        "visitId": "4ea76b27-3c9f-4e40-9652-5af57445e0c6"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,29 @@
+info:
+  name: Patch User Config
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/config"
+  headers:
+    - name: x-client-api-key
+      value: "{{x-client-api-key}}"
+  body:
+    type: json
+    data: |
+      {
+        "userId": "12345",
+        "theme": "dark",
+        "notificationsEnabled": true,
+        "language": "en",
+        "autoStaffingRatioDetectionEnabled": false,
+        "autoScheduleGenerationEnabled": true
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

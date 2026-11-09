@@ -1,0 +1,18 @@
+info:
+  name: Activate Employee
+  type: http
+  seq: 7
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/employees/0291aa7c-bcd9-4ac2-b029-65299835d991/activate"
+  headers:
+    - name: x-client-api-key
+      value: default
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

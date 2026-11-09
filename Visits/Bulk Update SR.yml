@@ -1,0 +1,37 @@
+info:
+  name: Bulk Update SR
+  type: http
+  seq: 13
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/visits/apply-sr/bulk"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "visits": [
+              {
+                  "id": "03a91ae0-2efb-48b6-987b-017479db794c",
+                  "update": "3:1"
+              },
+              {
+                  "id": "0601bc89-58b0-45af-b5f1-fc29c86c3599",
+                  "update": "3:1"
+              },
+              {
+                  "id": "01a18232-81ee-4de8-a671-b527b942fe89",
+                  "update": "3:1"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

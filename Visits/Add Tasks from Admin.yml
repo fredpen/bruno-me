@@ -1,0 +1,32 @@
+info:
+  name: Add Tasks from Admin
+  type: http
+  seq: 22
+
+http:
+  method: POST
+  url: "{{baseUrl}}/visits/0bdc4822-71da-4938-a87d-a6f00d246569/tasks/admin"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "tasks": [
+              {
+                  "taskDescription": "Assisting With Mail",
+                  "taskId": 189
+              }
+          ],
+          "reasonCode": "23"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

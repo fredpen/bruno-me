@@ -1,0 +1,34 @@
+info:
+  name: Create a new role
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/users/roles"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Admin",
+        "permissions": [
+          "payins:read",
+          "payouts:write:*",
+          "virtual-accounts:create"
+        ],
+        "merchantId": "550e8400-e29b-41d4-a716-446655440000",
+        "parentRoleId": "550e8400-e29b-41d4-a716-446655440001",
+        "metadata": {
+          "description": "Full admin access"
+        },
+        "createdBy": "550e8400-e29b-41d4-a716-446655440002"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new role with a set of permissions.

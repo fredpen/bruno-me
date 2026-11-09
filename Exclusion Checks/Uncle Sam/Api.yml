@@ -1,0 +1,25 @@
+info:
+  name: Api
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: https://api.sam.gov/entity-information/v4/exclusions?api_key=SAM-e922193e-6506-4bf6-90f5-7fc608fdb4eb&classification=INDIVIDUAL&exclusionName=KNOPPING sharon
+  params:
+    - name: api_key
+      value: SAM-e922193e-6506-4bf6-90f5-7fc608fdb4eb
+      type: query
+    - name: classification
+      value: INDIVIDUAL
+      type: query
+    - name: exclusionName
+      value: KNOPPING sharon
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

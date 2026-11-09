@@ -1,0 +1,411 @@
+info:
+  name: Modifier preview
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl}}/billing/modifier-preview"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  body:
+    type: json
+    data: |-
+      {
+        "items": [
+          {
+            "serviceCode": "S5125",
+            "modifier": "CG:U3:TN:UN"
+          },
+          {
+            "serviceCode": "S5125",
+            "modifier": "TN:U2:U3:UG"
+          },
+          {
+            "serviceCode": "T2017",
+            "modifier": "CG:HA:U3:UN"
+          },
+          {
+            "serviceCode": "T2017",
+            "modifier": "TN:CG:U3:UN"
+          },
+          {
+            "serviceCode": "S5150",
+            "modifier": "TD:UN:U3:KX"
+          },
+          {
+            "serviceCode": "S5150",
+            "modifier": "TN:UN:UG"
+          },
+          {
+            "serviceCode": "S9123",
+            "modifier": "UN:UG:KX"
+          },
+          {
+            "serviceCode": "S9124",
+            "modifier": "22:HQ:UH"
+          },
+          {
+            "serviceCode": "T1021",
+            "modifier": "U3:TN:UN:UG"
+          },
+          {
+            "serviceCode": "T2021",
+            "modifier": "TG:UN:TN:KX"
+          },
+          {
+            "serviceCode": "T2019",
+            "modifier": "TF:HQ:TN:22"
+          },
+          {
+            "serviceCode": "A0120",
+            "modifier": "DR:TN:RD:DD"
+          },
+          {
+            "serviceCode": "A0090",
+            "modifier": "TN:DR"
+          },
+          {
+            "serviceCode": "OTHER",
+            "modifier": "GT:U3:UN:TN"
+          }
+        ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true
+
+examples:
+  - name: Upload billing
+    request:
+      url: "{{baseUrl}}/billing/upload"
+      method: POST
+      headers:
+        - name: x-client-api-key
+          value: default
+        - name: ""
+          value: ""
+      body:
+        type: multipart-form
+        data:
+          - name: file
+            type: file
+            value:
+              - /Users/tochi/Downloads/billing_export_20250826.xlsx
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: ETag
+          value: W/"139d-BO3qV0kMprPFuBGM+hyTkXBeWCs"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: br
+        - name: Date
+          value: Tue, 26 Aug 2025 21:08:42 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "Bolaji, Ugochi": {
+                      "client": null,
+                      "Service Info": [
+                          {
+                              "Service Code": "S5125",
+                              "Service Name": "Attendant Care",
+                              "Visits": [
+                                  {
+                                      "Visit Date": "2025-07-11",
+                                      "Units": 4,
+                                      "Modifier": "UF",
+                                      "Staff Hours": 0.92,
+                                      "Billing Hours": 0.92,
+                                      "ICN": "",
+                                      "Service Code": "S5125",
+                                      "Service Name": "Attendant Care"
+                                  }
+                              ]
+                          }
+                      ]
+                  },
+                  "BOTELLO, EMILIANO": {
+                      "client": {
+                          "id": "93a0c950-dc3c-47ec-9aba-2cba764b708e",
+                          "clientId": "616536",
+                          "clientStatus": "Active",
+                          "aggregatorStatus": "FAILED",
+                          "clientFirstName": "EMILIANO",
+                          "dob": null,
+                          "gender": null,
+                          "language": null,
+                          "clientMiddleInitial": null,
+                          "clientLastName": "BOTELLO",
+                          "clientQualifier": "A13610706",
+                          "clientMedicaidId": "A13610706",
+                          "clientIdentifier": "A13610706",
+                          "clientProgram": "AHCCCS",
+                          "missingMedicaidId": null,
+                          "sequenceId": "2025-05-05T14:21:51.242Z",
+                          "clientCustomId": "0016731038",
+                          "clientOtherId": null,
+                          "clientSSN": null,
+                          "clientTimezone": "US/Arizona",
+                          "coordinator": null,
+                          "lastBilled": null,
+                          "createdAt": "2025-05-05T14:21:51.242Z",
+                          "contingencyPlan": null,
+                          "sentToAggregator": false,
+                          "updatedAt": "2025-08-25T14:23:39.827Z",
+                          "autoClockoutAtMidnightEnabled": false,
+                          "autoSRDetectionEnabled": false,
+                          "autoScheduleGenerationEnabled": false,
+                          "autoScheduleGenerationDetails": null
+                      },
+                      "Service Info": [
+                          {
+                              "Service Code": "S5125",
+                              "Service Name": "Attendant Care",
+                              "Visits": [
+                                  {
+                                      "Visit Date": "2025-07-14",
+                                      "Units": 8,
+                                      "Modifier": "UG",
+                                      "Staff Hours": 2,
+                                      "Billing Hours": 2,
+                                      "ICN": "",
+                                      "Service Code": "T2017",
+                                      "Service Name": "Res. Habilitation"
+                                  }
+                              ]
+                          }
+                      ]
+                  },
+                  "ESCARZAGA, DARLYNG": {
+                      "client": {
+                          "id": "26fc65a0-21a9-4827-89f0-dd47300198bf",
+                          "clientId": "484506",
+                          "clientStatus": "Active",
+                          "aggregatorStatus": null,
+                          "clientFirstName": "DARLYNG",
+                          "dob": null,
+                          "gender": null,
+                          "language": null,
+                          "clientMiddleInitial": null,
+                          "clientLastName": "ESCARZAGA",
+                          "clientQualifier": "A00205738",
+                          "clientMedicaidId": "A00205738",
+                          "clientIdentifier": "A00205738",
+                          "clientProgram": "AHCCCS",
+                          "missingMedicaidId": null,
+                          "sequenceId": "2025-05-05T14:21:49.867Z",
+                          "clientCustomId": "0001279754",
+                          "clientOtherId": null,
+                          "clientSSN": null,
+                          "clientTimezone": "US/Arizona",
+                          "coordinator": null,
+                          "lastBilled": null,
+                          "createdAt": "2025-05-05T14:21:49.867Z",
+                          "contingencyPlan": null,
+                          "sentToAggregator": false,
+                          "updatedAt": "2025-05-05T14:21:49.867Z",
+                          "autoClockoutAtMidnightEnabled": false,
+                          "autoSRDetectionEnabled": false,
+                          "autoScheduleGenerationEnabled": false,
+                          "autoScheduleGenerationDetails": null
+                      },
+                      "Service Info": [
+                          {
+                              "Service Code": "S5125",
+                              "Service Name": "Attendant Care",
+                              "Visits": [
+                                  {
+                                      "Visit Date": "2025-07-02",
+                                      "Units": 40,
+                                      "Modifier": "",
+                                      "Staff Hours": 10,
+                                      "Billing Hours": 10,
+                                      "ICN": "",
+                                      "Service Code": "S5125",
+                                      "Service Name": "Attendant Care"
+                                  }
+                              ]
+                          }
+                      ]
+                  },
+                  "Palmer, Cole": {
+                      "client": null,
+                      "Service Info": [
+                          {
+                              "Service Code": "S5125",
+                              "Service Name": "Attendant Care",
+                              "Visits": [
+                                  {
+                                      "Visit Date": "2025-07-14",
+                                      "Units": 8,
+                                      "Modifier": "",
+                                      "Staff Hours": 2,
+                                      "Billing Hours": 2,
+                                      "ICN": "",
+                                      "Service Code": "S5125",
+                                      "Service Name": "Attendant Care"
+                                  }
+                              ]
+                          }
+                      ]
+                  },
+                  "PEEL, ALICE": {
+                      "client": {
+                          "id": "b38338b8-e4fc-438d-b35a-fc9070a2e817",
+                          "clientId": "726497",
+                          "clientStatus": "Active",
+                          "aggregatorStatus": null,
+                          "clientFirstName": "ALICE",
+                          "dob": null,
+                          "gender": null,
+                          "language": null,
+                          "clientMiddleInitial": null,
+                          "clientLastName": "PEEL",
+                          "clientQualifier": "A47970184",
+                          "clientMedicaidId": "A47970184",
+                          "clientIdentifier": "A47970184",
+                          "clientProgram": "AHCCCS",
+                          "missingMedicaidId": null,
+                          "sequenceId": "2025-05-05T14:59:27.252Z",
+                          "clientCustomId": "0006155316",
+                          "clientOtherId": null,
+                          "clientSSN": null,
+                          "clientTimezone": "US/Arizona",
+                          "coordinator": null,
+                          "lastBilled": null,
+                          "createdAt": "2025-05-05T14:59:27.252Z",
+                          "contingencyPlan": null,
+                          "sentToAggregator": false,
+                          "updatedAt": "2025-05-05T14:59:27.252Z",
+                          "autoClockoutAtMidnightEnabled": false,
+                          "autoSRDetectionEnabled": false,
+                          "autoScheduleGenerationEnabled": false,
+                          "autoScheduleGenerationDetails": null
+                      },
+                      "Service Info": [
+                          {
+                              "Service Code": "S5125",
+                              "Service Name": "Attendant Care",
+                              "Visits": [
+                                  {
+                                      "Visit Date": "2025-07-08",
+                                      "Units": 50,
+                                      "Modifier": "",
+                                      "Staff Hours": 12.5,
+                                      "Billing Hours": 12.5,
+                                      "ICN": "",
+                                      "Service Code": "S5125",
+                                      "Service Name": "Attendant Care"
+                                  }
+                              ]
+                          }
+                      ]
+                  },
+                  "SHIHADY, LEON": {
+                      "client": {
+                          "id": "86b0c1d8-e5d2-4fce-9252-ec79eb174c5f",
+                          "clientId": "438243",
+                          "clientStatus": "Active",
+                          "aggregatorStatus": null,
+                          "clientFirstName": "LEON",
+                          "dob": null,
+                          "gender": null,
+                          "language": null,
+                          "clientMiddleInitial": null,
+                          "clientLastName": "SHIHADY",
+                          "clientQualifier": "A19360302",
+                          "clientMedicaidId": "A19360302",
+                          "clientIdentifier": "A19360302",
+                          "clientProgram": "AHCCCS",
+                          "missingMedicaidId": null,
+                          "sequenceId": "2025-05-05T14:21:49.450Z",
+                          "clientCustomId": "0017609955",
+                          "clientOtherId": null,
+                          "clientSSN": null,
+                          "clientTimezone": "US/Arizona",
+                          "coordinator": null,
+                          "lastBilled": null,
+                          "createdAt": "2025-05-05T14:21:49.450Z",
+                          "contingencyPlan": null,
+                          "sentToAggregator": false,
+                          "updatedAt": "2025-05-05T14:21:49.450Z",
+                          "autoClockoutAtMidnightEnabled": false,
+                          "autoSRDetectionEnabled": false,
+                          "autoScheduleGenerationEnabled": false,
+                          "autoScheduleGenerationDetails": null
+                      },
+                      "Service Info": [
+                          {
+                              "Service Code": "S5125",
+                              "Service Name": "Attendant Care",
+                              "Visits": [
+                                  {
+                                      "Visit Date": "2025-06-30",
+                                      "Units": 52,
+                                      "Modifier": "",
+                                      "Staff Hours": 13,
+                                      "Billing Hours": 13,
+                                      "ICN": "",
+                                      "Service Code": "S5125",
+                                      "Service Name": "Attendant Care"
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              },
+              "code": null,
+              "timestamp": "2025-08-26T21:08:42.249Z"
+          }

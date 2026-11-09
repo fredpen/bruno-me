@@ -1,0 +1,35 @@
+info:
+  name: Update Employee Emergency Contact Address
+  type: http
+  seq: 13
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/employees/emergency-contact/5d551e07-9c04-49fa-8d5b-e1fd53635470/address"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "employeeContactAddressType": "Home",
+          "employeeContactAddressIsPrimary": true,
+          "employeeContactAddressLine1": "456 Maple Ave",
+          "employeeContactAddressLine2": "Suite 101",
+          "employeeContactCounty": "Montgomery",
+          "employeeContactCity": "Rockville",
+          "employeeContactState": "MD",
+          "employeeContactZip": "20850",
+          "employeeContactAddressLongitude": -77.1528,
+          "employeeContactAddressLatitude": 39.0839
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

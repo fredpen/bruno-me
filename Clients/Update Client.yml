@@ -1,0 +1,30 @@
+info:
+  name: Update Client
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/clients/{{clientId}}"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |
+      {
+        "autoScheduleGenerationEnabled": true,
+        "autoScheduleGenerationDetails": {
+          "daysThreshold": 4,
+          "templateInstances": 2
+        }
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

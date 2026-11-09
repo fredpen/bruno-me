@@ -1,0 +1,27 @@
+info:
+  name: Upload 835 file
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/billing/835/parse"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - /Users/fred/Documents/Codebase/Potternex/api/assets/local835.txt
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

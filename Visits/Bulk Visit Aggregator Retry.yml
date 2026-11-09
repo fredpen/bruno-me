@@ -1,0 +1,26 @@
+info:
+  name: Bulk Visit Aggregator Retry
+  type: http
+  seq: 36
+
+http:
+  method: POST
+  url: "{{baseUrl}}/visits/retry-processing/bulk"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "visitIds": []
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

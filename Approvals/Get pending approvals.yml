@@ -1,0 +1,145 @@
+info:
+  name: Get pending approvals
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/approval?sortField=clientFirstName&sortOrder=desc"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: visitStatus
+      value: verified
+      type: query
+      disabled: true
+    - name: clientId
+      value: a40d81fc-8164-44b7-a124-09389cbe313d
+      type: query
+      disabled: true
+    - name: employeeId
+      value: c1e79d4e-a88e-4dc6-9005-22a1adac1635
+      type: query
+      disabled: true
+    - name: limit
+      value: "1"
+      type: query
+      disabled: true
+    - name: employeeKeyword
+      value: "109825"
+      type: query
+      disabled: true
+    - name: clientKeyword
+      value: "234000"
+      type: query
+      disabled: true
+    - name: sortField
+      value: clientFirstName
+      type: query
+    - name: sortOrder
+      value: desc
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/approval"
+      method: GET
+      headers:
+        - name: x-client-api-key
+          value: default
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Content-Length
+          value: "945"
+        - name: ETag
+          value: W/"3b1-DN0Uhzp9bDUrdilVVvO90LBMsAE"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Wed, 16 Apr 2025 13:34:53 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": [
+                  {
+                      "id": "2a6360db-a5d7-44d9-97eb-f8804cf6bd72",
+                      "changeMadeBy": "string@example.com",
+                      "body": {
+                          "callInDateTime": "2025-03-13T16:02:17.604Z",
+                          "callOutDateTime": "2025-03-13T19:08:17.604Z"
+                      },
+                      "approvalStatus": "pending",
+                      "approvalEntityType": "visitHoursChange",
+                      "changeApprovedBy": null,
+                      "changeDateTime": "2025-04-16T12:38:30.261Z",
+                      "changeReasonMemo": null,
+                      "createdAt": "2025-04-16T12:38:30.262Z",
+                      "updatedAt": "2025-04-16T12:38:30.262Z"
+                  },
+                  {
+                      "id": "eeeae39a-8ef8-4b48-ae9f-a8520bd1f882",
+                      "changeMadeBy": "string@example.com",
+                      "body": {
+                          "callInDateTime": "2025-03-13T16:02:17.604Z",
+                          "callOutDateTime": "2025-03-13T19:08:17.604Z"
+                      },
+                      "approvalStatus": "pending",
+                      "approvalEntityType": "visitHoursChange",
+                      "changeApprovedBy": null,
+                      "changeDateTime": "2025-04-16T12:44:31.810Z",
+                      "changeReasonMemo": null,
+                      "createdAt": "2025-04-16T12:44:31.812Z",
+                      "updatedAt": "2025-04-16T12:44:31.812Z"
+                  }
+              ],
+              "code": null,
+              "timestamp": "2025-04-16T13:34:53.904Z"
+          }

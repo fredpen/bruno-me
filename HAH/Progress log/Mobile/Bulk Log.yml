@@ -1,0 +1,139 @@
+info:
+  name: Bulk Log
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/client/habilitation/progress/bulk/mobile"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "location": "Home",
+          "serviceDate": "2025-01-21",
+          "goals": [
+              {
+                  "goalId": "76feb917-cf97-4f83-b614-0de3705ee4bd",
+                  "notes": "{{$randomLoremSentences}}",
+                  "score": 4
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Sample
+    request:
+      url: "{{baseUrl}}/client/habilitation/progress/bulk"
+      method: POST
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+              "employeeID": "{{employeeId}}",
+              "location": "Home",
+              "serviceDate": "2025-01-14",
+              "goals": [
+                  {
+                      "goalId": "{{goalId}}",
+                      "notes": "{{$randomLoremSentences}}",
+                      "score": 2
+                  },
+                  {
+                      "goalId": "2ad6a7f2-67fc-4ecb-abee-7d43ba23d2c1",
+                      "notes": "{{$randomLoremSentences}}",
+                      "score": 4
+                  }
+              ]
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json
+        - name: ETag
+          value: W/"42b-FxYN6MUtE9cxRP5+oRZ1ku/dVHU"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: br
+        - name: Date
+          value: Wed, 18 Feb 2026 12:30:23 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": [
+                  {
+                      "id": "e05b7540-c8b8-4d9c-8b71-cf893b8d6629",
+                      "goalId": "68c201d7-db31-4b01-911a-73a73e2197a7",
+                      "clientId": "155524c4-d308-4265-b489-766ba3e123f7",
+                      "employeeID": "411b2263-8451-471b-8476-6f0cde9d6d94",
+                      "notes": "Nesciunt unde eveniet vel blanditiis incidunt iusto. Iste libero maxime nihil voluptatem quasi officia dolores natus incidunt. Iure inventore iusto corrupti             "score": 2,
+                      "createdAt": "2026-02-18T12:30:23.379Z",
+                      "updatedAt": "2026-02-18T12:30:23.379Z"
+                  },
+                  {
+                      "id": "be2dbd70-8672-4a84-ab3c-476f43461612",
+                      "goalId": "2ad6a7f2-67fc-4ecb-abee-7d43ba23d2c1",
+                      "clientId": "155524c4-d308-4265-b489-766ba3e123f7",
+                      "employeeID": "411b2263-8451-471b-8476-6f0cde9d6d9Ï4",
+                      "notes": "Suscipit voluptatem dolorum. Itaque velit ut qui. Nulla voluptatem quaerat enim.",
+                      "serviceDate": "2025-01-14T00:00:00.000Z",
+                      "location": "Home",
+                      "score": 4,
+                      "createdAt": "2026-02-18T12:30:23.379Z",
+                      "updatedAt": "2026-02-18T12:30:23.379Z"
+                  }
+              ],
+              "code": null,
+              "timestamp": "2026-02-18T12:30:23.386Z"
+          }

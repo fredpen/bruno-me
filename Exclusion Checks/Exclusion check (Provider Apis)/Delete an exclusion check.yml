@@ -1,0 +1,26 @@
+info:
+  name: Delete an exclusion check
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/employees/exclusion-checks/sam-gov/0260e17f-e912-49a2-9b83-22c16daf468e"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "isMobileUser": true
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

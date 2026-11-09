@@ -1,0 +1,26 @@
+info:
+  name: Manually Fetch Aggregator Status
+  type: http
+  seq: 28
+
+http:
+  method: POST
+  url: "{{baseUrl}}/employees/aggregator-status/411b2263-8451-471b-8476-6f0cde9d6d94/40696093-fadb-4139-8be1-18e9878625b0"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "visitIds": []
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

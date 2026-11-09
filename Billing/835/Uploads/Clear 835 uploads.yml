@@ -1,0 +1,20 @@
+info:
+  name: Clear 835 uploads
+  type: http
+  seq: 3
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/billing/835/uploads"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

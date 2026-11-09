@@ -1,0 +1,29 @@
+info:
+  name: Get Visits Mobile
+  type: http
+  seq: 32
+
+http:
+  method: GET
+  url: "{{baseUrl}}/visits"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "FirstName": "John",
+          "LastName": "Doe",
+          "StartTime": "12:00",
+          "EndTime": "16:00"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

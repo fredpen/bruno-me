@@ -1,0 +1,210 @@
+info:
+  name: Search Firm Hit
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: https://sam.gov/api/prod/sgs/v1/search/?random=1772539777851&index=ex&page=0&sort=-relevance&size=25&mode=search&q=&qMode=EXACT&is_active=true&domain=search_entity&excluded_party_ssn=%5B%7B%22ssn%22%3A%22%22%2C%22lastName%22%3A%22BELOV%22%2C%22firstName%22%3A%22ZOYA%22%2C%22middleName%22%3A%22%22%7D%5D&classification=Individual
+  params:
+    - name: random
+      value: "1772539777851"
+      type: query
+    - name: index
+      value: ex
+      type: query
+    - name: page
+      value: "0"
+      type: query
+    - name: sort
+      value: -relevance
+      type: query
+    - name: size
+      value: "25"
+      type: query
+    - name: mode
+      value: search
+      type: query
+    - name: q
+      value: ""
+      type: query
+    - name: qMode
+      value: EXACT
+      type: query
+    - name: is_active
+      value: "true"
+      type: query
+    - name: domain
+      value: search_entity
+      type: query
+    - name: excluded_party_ssn
+      value: "%5B%7B%22ssn%22%3A%22%22%2C%22lastName%22%3A%22BELOV%22%2C%22firstName%22%3A%22ZOYA%22%2C%22middleName%22%3A%22%22%7D%5D"
+      type: query
+    - name: classification
+      value: Individual
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Search Firm
+    request:
+      url: https://sam.gov/api/prod/sgs/v1/search/?index=ex&size=1&mode=search&q=%22ABC%20EUREKA%20MEDICAL%20RENTALS%22&qMode=EXACT&is_active=true&domain=search_entity&classification=Firm
+      method: GET
+      params:
+        - name: random
+          value: "1768729806027"
+          type: query
+          disabled: true
+        - name: index
+          value: ex
+          type: query
+        - name: page
+          value: "0"
+          type: query
+          disabled: true
+        - name: sort
+          value: -relevance
+          type: query
+          disabled: true
+        - name: size
+          value: "1"
+          type: query
+        - name: mode
+          value: search
+          type: query
+        - name: q
+          value: "%22ABC%20EUREKA%20MEDICAL%20RENTALS%22"
+          type: query
+        - name: qMode
+          value: EXACT
+          type: query
+        - name: is_active
+          value: "true"
+          type: query
+        - name: domain
+          value: search_entity
+          type: query
+        - name: classification
+          value: Firm
+          type: query
+          description: Individual, Firm
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/hal+json
+        - name: Transfer-Encoding
+          value: chunked
+        - name: Connection
+          value: keep-alive
+        - name: Date
+          value: Sun, 18 Jan 2026 10:10:24 GMT
+        - name: x-envoy-upstream-service-time
+          value: "16"
+        - name: Content-Encoding
+          value: gzip
+        - name: Server
+          value: nginx/1.29.0
+        - name: access-control-allow-origin
+          value: "*"
+        - name: access-control-allow-methods
+          value: GET
+        - name: access-control-max-age
+          value: "3600"
+        - name: access-control-allow-headers
+          value: Origin, X-Requested-With, Content-Type, Accept, Cache-Control, Pragma, Expires, x-auth-token
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-xss-protection
+          value: "0"
+        - name: Cache-Control
+          value: no-cache, no-store, max-age=0, must-revalidate
+        - name: Pragma
+          value: no-cache
+        - name: Expires
+          value: "0"
+        - name: strict-transport-security
+          value: max-age=31536000 ; includeSubDomains
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains; preload
+        - name: x-frame-options
+          value: DENY
+        - name: X-Cache
+          value: Miss from cloudfront
+        - name: Via
+          value: 1.1 22af96af466dc1aaabeb95c3ba29cd4e.cloudfront.net (CloudFront)
+        - name: X-Amz-Cf-Pop
+          value: MAN51-P2
+        - name: X-Amz-Cf-Id
+          value: HCNwuFVCwOUriyA0H-QhBBpwFb6F8iS5SK23gQzFixpZSkgAmYHRNA==
+      body:
+        type: text
+        data: |-
+          {
+              "_embedded": {
+                  "results": [
+                      {
+                          "ueiSam": "R4EVP8MNZK88",
+                          "address": {
+                              "zip": "33016",
+                              "country": "USA",
+                              "streetAddress": "1800 West 49th St., No. 115",
+                              "city": "Hialeah",
+                              "state": "FL"
+                          },
+                          "_rScore": 100,
+                          "_type": "exclusion",
+                          "exclusionType": "Ineligible (Proceedings Completed)",
+                          "excludingAgency": "OPM",
+                          "cageCode": null,
+                          "isActive": true,
+                          "title": "ABC Eureka Medical Rentals",
+                          "type": {
+                              "code": 2,
+                              "value": "Ineligible (Proceedings Completed)"
+                          },
+                          "excludingAgencyDesc": "OFFICE OF PERSONNEL MANAGEMENT",
+                          "ctCode": "R",
+                          "classification": {
+                              "code": "Firm",
+                              "value": null
+                          },
+                          "noPublicDisplayFlag": "F",
+                          "terminationDate": null,
+                          "isFascsaOrder": false,
+                          "organizationHierarchy": [
+                              {
+                                  "organizationId": "300000020",
+                                  "level": 1,
+                                  "name": "OFFICE OF PERSONNEL MANAGEMENT"
+                              }
+                          ],
+                          "_id": "58753",
+                          "activationDate": "2000-09-21",
+                          "samNumber": "S4MR3MFTJ",
+                          "pirValue": "1343433600000",
+                          "pirKey": "58753"
+                      }
+                  ]
+              },
+              "_links": {
+                  "self": {
+                      "href": "https://52samdotgovsearch.prod.apps-internal.prod-iae.bsp.gsa.gov/sgs/v1/search?index=ex&index=ex&q=%22ABC%20EUREKA%20MEDICAL%20RENTALS%22&q=%22ABC%20EUREKA%20MEDICAL%20RENTALS%22&page=0&size=1&size=1&sort=-relevance&raw=false&mode=search&mode=search&qMode=EXACT&qMode=EXACT&is_active=true&domain=search_entity&classification=Firm{&exactMatch}",
+                      "templated": true
+                  }
+              },
+              "page": {
+                  "size": 1,
+                  "totalElements": 2,
+                  "totalPages": 2,
+                  "number": 0,
+                  "maxAllowedRecords": 10000
+              }
+          }

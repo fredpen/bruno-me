@@ -1,0 +1,60 @@
+info:
+  name: Create Payer
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/payers"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-client-api-key
+      value: "{{clientApiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+          "name": "United Healthcare",
+          "state": "NY",
+          "city": "New York",
+          "address": "123 Health Ave",
+          "zipCode": "10001",
+          "carrierCode": "UHC-NY-001",
+          "schedulingWeekEnd": "Sunday",
+          "isActive": true,
+          "isTplPayer": false,
+          "billing": {
+              "requiresCustomerNumber": true,
+              "requiresMedicaidId": true,
+              "requiresPrimaryDiagnosis": false,
+              "requiresDocForBilling": false,
+              "dobRequired": true,
+              "holdSplitShiftBilling": false
+          },
+          "options": {
+              "isConsumerDirected": false,
+              "isConsumerDirectedAutomaticConfirmation": false,
+              "userStaffNPI": true
+          }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // Save the ID of the newly created payer to a collection variable
+        if (res.getStatus() === 201) {
+            const responseData = res.getBody();
+            pm.collectionVariables.set("payerId", responseData.id);
+            console.log(`Set payerId to: ${responseData.id}`);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new payer record. The ID of the created payer is automatically saved to the `payerId` collection variable upon a successful (201 Created) response.

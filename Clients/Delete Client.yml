@@ -1,0 +1,39 @@
+info:
+  name: Delete Client
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/clients/866bd018-612d-43ab-8bf2-2bcc54cc417b"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "ProviderQualifier": "string",
+        "ProviderId": "string",
+        "ClientId": "strings",
+        "ClientFirstName": "string",
+        "ClientMiddleInitial": "string",
+        "ClientLastName": "string",
+        "ClientQualifier": "string",
+        "ClientIdentifier": "string",
+        "ClientProgram": "string",
+        "ClientMedicaidId": "string",
+        "ClientCustomId": "string",
+        "ClientTimezone": "string",
+        "Coordinator": "string",
+        "ClientStatus": "string"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

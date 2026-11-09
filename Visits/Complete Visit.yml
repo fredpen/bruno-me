@@ -1,0 +1,25 @@
+info:
+  name: Complete Visit
+  type: http
+  seq: 10
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/visits/complete/ae14e7f9-298b-4f2c-8211-7187947b653e"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "latitude": 7.8234,
+        "longitude": 9.4567
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

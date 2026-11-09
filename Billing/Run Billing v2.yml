@@ -1,0 +1,167 @@
+info:
+  name: Run Billing v2
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{baseUrl}}/billing/run?startDate=2026-02-01&endDate=2026-02-01&billingProfile=3b13ceed-3ff4-4f0c-ae1d-b5fc812e23f9"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: visitStatus
+      value: verified
+      type: query
+      disabled: true
+    - name: modifier
+      value: ""
+      type: query
+      disabled: true
+    - name: billVisit
+      value: ""
+      type: query
+      disabled: true
+    - name: clientId
+      value: ""
+      type: query
+      disabled: true
+    - name: serviceType
+      value: ""
+      type: query
+      disabled: true
+    - name: payerId
+      value: ""
+      type: query
+      disabled: true
+    - name: payerProgram
+      value: ""
+      type: query
+      disabled: true
+    - name: event
+      value: ""
+      type: query
+      disabled: true
+    - name: startDate
+      value: 2026-02-01
+      type: query
+    - name: endDate
+      value: 2026-02-01
+      type: query
+    - name: billingProfile
+      value: "{{billingProfileId}}"
+      type: query
+      disabled: true
+    - name: billingProfile
+      value: 3b13ceed-3ff4-4f0c-ae1d-b5fc812e23f9
+      type: query
+      description: AZDDD
+    - name: billingProfile
+      value: 025c5b34-f239-4670-ba95-8fc1741b279d
+      type: query
+      description: AZMCC
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: New Request
+    request:
+      url: "{{baseUrl}}/billing?visitStatus=verified"
+      method: GET
+      headers:
+        - name: x-client-api-key
+          value: default
+      params:
+        - name: visitStatus
+          value: verified
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Content-Length
+          value: "977"
+        - name: ETag
+          value: W/"3d1-TlF7TERqnGU7hl7qGDcO2WEMbAU"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Mon, 28 Jul 2025 18:50:44 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": [
+                  "ISA*00*          *00*          *ZZ*359125_Potte   *ZZ*HAR_837_Upload *20250728*1150*^*00501*000000080*1*P*:~",
+                  "GS*HC*359125_Potte*HAR_837_Upload*20250728*1150*1*X*005010X222A1~",
+                  "ST*837*0001*005010X222A1~",
+                  "BHT*0019*00*PVC001*20250728*1150*CH~",
+                  "NM1*41*2*Potterville Care*****46*359125_Potte~",
+                  "PER*IC*Jeremiah Adeyemi*EM*admin@pottervillecare.com***TE*6562049765~",
+                  "NM1*40*2*HAR_837_Upload*****46*HAR_837_Upload~",
+                  "HL*1**20*1~",
+                  "NM1*85*2*Potterville Care~",
+                  "N3*3107 E Franklin Ave~",
+                  "N4*GILBERT*AZ*852959023~",
+                  "REF*EI*862604462~",
+                  "HL*2*1*22*0~",
+                  "SBR*P*18*******ZZ~",
+                  "NM1*IL*1*BOTELLO*EMILIANO****MI*~",
+                  "N3*~",
+                  "N4***~",
+                  "DMG*D8**~",
+                  "NM1*PR*2*AZDESDDD*****PI*866004791~",
+                  "REF*G2*140344~",
+                  "CLM*****12:B:1*Y*A*Y*Y~",
+                  "REF*G1*undefined~",
+                  "HI*ABK:undefined~",
+                  "LX*1~",
+                  "SV1*HC:S5125:NULL*0.00*UN*36***1~",
+                  "DTP*472*D8*20241213~",
+                  "SE*25*0001~",
+                  "GE*1*0001~",
+                  "IEA*1*000000080~"
+              ],
+              "code": null,
+              "timestamp": "2025-07-28T18:50:44.888Z"
+          }

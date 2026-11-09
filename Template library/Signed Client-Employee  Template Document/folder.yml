@@ -1,0 +1,7 @@
+info:
+  name: Signed Client/Employee  Template Document
+  type: folder
+  seq: 4
+
+request:
+  auth: inherit

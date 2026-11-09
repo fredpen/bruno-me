@@ -1,0 +1,42 @@
+name: AZ-local
+variables:
+  - name: baseUrl
+    value: http://localhost:8000
+  - name: email
+    value: tochitest@yopmail.com
+  - name: password
+    value: mIVGZp3?=^6isB?
+  - name: token
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZTBiN2NkZC1mZDczLTQyNzAtOGFlZC0wYjI4OGM4NDVmMTMiLCJlbWFpbCI6InRvY2hpdGVzdEB5b3BtYWlsLmNvbSIsImlhdCI6MTc5MjY5NDQ2MiwiZXhwIjoxNzkyNzgwODYyfQ.VgqsQ8ThNYRm3xf3HhDpgVuJzXeoeQ4-x8_iUkAz6vM
+  - name: agencyId
+    value: NX90241
+  - name: staffId
+    value: ""
+  - name: visitId
+    value: 22555500-11ef-48b6-94a4-eea8706ee423
+  - name: employeeId
+    value: b7cf29fc-cdbd-47af-acbb-cf1e7a4847ad
+  - name: goalId
+    value: ""
+  - name: clientApiKey
+    value: default
+  - name: billingProfileId
+    value: 8703303f-1ecd-4fc5-b4af-19cb4931d424
+  - name: progressID
+    value: ""
+  - name: mobileToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI0NjNkMmRiMi1iZTUyLTQ5ZjItYmU3OS1hYWMwODhmNGRjZGQiLCJlbWFpbCI6InJlYWxqZXJlbXlhbHNsZW50aGVhY3RvcnhAeW9wbWFpbC5jb20iLCJpc01vYmlsZVVzZXIiOnRydWUsImlhdCI6MTc4NjM3NDM5OSwiZXhwIjoxNzg2NDYwNzk5fQ.XwwgKibYtkGdH14UwJe4G1xeFhwi8_kqrXMmTS5NXVU
+  - name: goalId2
+    value: ""
+  - name: templateId
+    value: 06bbb47c-896f-42bd-a923-8cef0b979441
+  - name: deviceId
+    value: 2a13b758-7b86-417e-a84a-baf15e778f68
+  - name: groupId
+    value: ""
+  - name: templateId
+    value: ""
+  - name: mobileEmail
+    value: realjeremyalslentheactorx@yopmail.com
+  - name: mobilePassword
+    value: VedWW4P@aV

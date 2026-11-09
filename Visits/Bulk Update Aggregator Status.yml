@@ -1,0 +1,26 @@
+info:
+  name: Bulk Update Aggregator Status
+  type: http
+  seq: 37
+
+http:
+  method: POST
+  url: "{{baseUrl}}/visits/aggregator-status/bulk"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "aggregatorIds": []
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

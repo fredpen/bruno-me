@@ -1,0 +1,30 @@
+info:
+  name: Bulk Client Aggregator Retry
+  type: http
+  seq: 41
+
+http:
+  method: GET
+  url: "{{baseUrl}}/clients/retry-processing/bulk"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "clientIds": [
+              "d0158518-28a2-487e-9850-6e855cf97eb6",
+              "407ac638-4c2c-45ad-a33e-785c30629b8d",
+              "4aa1cd52-d6ac-4fd5-99a7-e378acedead2"
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

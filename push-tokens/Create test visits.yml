@@ -1,0 +1,34 @@
+info:
+  name: Create test visits
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/visit-reminders/simulate-missed-visit"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "clientId": "{{clientId}}",
+        "employeeId": "{{employeeId}}",
+        "serviceType": "S5125",
+        "payerId": "AZDDD"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+runtime:
+  variables:
+    - name: clientId
+      value: 76feb917-cf97-4f83-b614-0de3705ee4bd
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

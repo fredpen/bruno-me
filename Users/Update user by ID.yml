@@ -1,0 +1,36 @@
+info:
+  name: Update user by ID
+  type: http
+  seq: 7
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/users/:id"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: id
+      value: "1"
+      type: path
+      description: (Required) The ID of the user to update.
+  body:
+    type: json
+    data: |-
+      {
+        "email": "user@example.com",
+        "firstName": "John",
+        "lastName": "Doe",
+        "password": "NewStrongP@ssword123",
+        "hasMobileAccess": true,
+        "hasAdminAccess": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Updates the details of an existing user.

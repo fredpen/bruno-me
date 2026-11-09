@@ -1,0 +1,22 @@
+info:
+  name: Get Authorization By ID
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{baseUrl}}/authorizations/71d06dab-a64a-497c-b99e-c104824a82e1"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

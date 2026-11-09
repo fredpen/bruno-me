@@ -1,0 +1,112 @@
+info:
+  name: Update
+  type: http
+  seq: 8
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/client/habilitation/progress/{{progressID}}"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "serviceDate": "2025-02-13",
+          "notes": "new notes",
+          "score": 2,
+          "location": "Home"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Update
+    request:
+      url: "{{baseUrl}}/client/habilitation/progress/{{progressID}}"
+      method: PUT
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+              "serviceDate": "2025-02-13",
+              "notes": "new notes",
+              "score": 2,
+              "location": "Home"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "472"
+        - name: ETag
+          value: W/"1d8-wYbEwwO8eSxQ8Vp3HnXhmmXpq8s"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Tue, 24 Feb 2026 10:50:54 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "id": "f8c0ef90-c860-4032-86dd-13c4a276c076",
+                  "goalId": "f3466e11-79e3-49fb-8a1f-ae7948039076",
+                  "clientId": "155524c4-d308-4265-b489-766ba3e123f7",
+                  "employeeID": "411b2263-8451-471b-8476-6f0cde9d6d94",
+                  "notes": "new notes",
+                  "serviceDate": "2025-02-13T00:00:00.000Z",
+                  "location": "Home",
+                  "score": 2,
+                  "createdAt": "2026-02-23T14:02:49.158Z",
+                  "updatedAt": "2026-02-24T10:50:54.675Z"
+              },
+              "code": null,
+              "timestamp": "2026-02-24T10:50:54.679Z"
+          }

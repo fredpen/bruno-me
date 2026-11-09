@@ -1,0 +1,28 @@
+info:
+  name: Test Notification
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{baseUrl}}/push-tokens/test/{{employeeId}}"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Test notification",
+        "body": "This is a test push notification.",
+        "pathname": "/visits/123"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

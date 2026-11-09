@@ -1,0 +1,28 @@
+info:
+  name: Update Client Task Notes
+  type: http
+  seq: 38
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/clients/c1e234cf-1441-4435-8027-a87e10352a41/notes/879328bf-11c0-494f-9d5a-89f0a6200730"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "content": "This is the content",
+          "type": "This is the type",
+          "isCompleted": true
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

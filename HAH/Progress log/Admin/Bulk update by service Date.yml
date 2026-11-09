@@ -1,0 +1,215 @@
+info:
+  name: Bulk update by service Date
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/client/habilitation/progress/bulk"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "serviceDate": "2025-01-22",
+          "goals": [
+              {
+                  "goalId": "{{goalId}}",
+                  "notes": "{{$randomLoremSentences}}",
+                  "score": 2
+              }
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Bulk update admin
+    request:
+      url: "{{baseUrl}}/client/habilitation/progress/bulk"
+      method: PUT
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+              "serviceDate": "2025-01-22",
+              "goals": [
+                  {
+                      "goalId": "{{goalId}}",
+                      "notes": "{{$randomLoremSentences}}",
+                      "score": 2
+                  }
+              ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "890"
+        - name: ETag
+          value: W/"37a-JFztMSsq8gck3Ts0X0uX6xVL6zU"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Mon, 23 Feb 2026 13:40:43 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": [
+                  {
+                      "id": "f8c0ef90-c860-4032-86dd-13c4a276c076",
+                      "goalId": "f3466e11-79e3-49fb-8a1f-ae7948039076",
+                      "clientId": "155524c4-d308-4265-b489-766ba3e123f7",
+                      "employeeID": "411b2263-8451-471b-8476-6f0cde9d6d94",
+                      "notes": "Sunt ut ab. Omnis consectetur asperiores in. Corrupti ad atque aperiam provident neque incidunt aut unde sit.",
+                      "serviceDate": "2025-01-22T00:00:00.000Z",
+                      "location": "home",
+                      "score": 2,
+                      "updatedAt": "2026-02-24T10:46:27.311Z"
+                  }
+              ],
+              "code": null,
+              "timestamp": "2026-02-24T10:46:27.312Z"
+          }
+  - name: Failure response
+    request:
+      url: "{{baseUrl}}/client/habilitation/progress/bulk"
+      method: PUT
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+              "employeeID": "{{employeeId}}",
+              "serviceDate": "2025-01-22",
+              "goals": [
+                  {
+                      "goalId": "{{goalId}}",
+                      "notes": "{{$randomLoremSentences}}",
+                      "score": 2
+                  },
+                  {
+                      "goalId": "9e489167-8ef8-48e7-965e-c7240e469c6a",
+                      "notes": "new note",
+                      "score": 4
+                  }
+              ]
+          }
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json
+        - name: Content-Length
+          value: "693"
+        - name: ETag
+          value: W/"2b5-seEcCvzsdov5PYT7qH4cglbRgSA"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Mon, 23 Feb 2026 14:02:12 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "statusCode": 404,
+              "timestamp": "2026-02-23T14:02:12.871Z",
+              "path": "/client/habilitation/progress/bulk",
+              "message": {
+                  "message": "Progress logs not found for serviceDate and goalId(s): f3466e11-79e3-49fb-8a1f-ae7948039076, 9e489167-8ef8-48e7-965e-c7240e469c6a",
+                  "error": "Not Found",
+                  "statusCode": 404
+              },
+              "exception": {
+                  "response": {
+                      "message": "Progress logs not found for serviceDate and goalId(s): f3466e11-79e3-49fb-8a1f-ae7948039076, 9e489167-8ef8-48e7-965e-c7240e469c6a",
+                      "error": "Not Found",
+                      "statusCode": 404
+                  },
+                  "status": 404,
+                  "options": {},
+                  "message": "Progress logs not found for serviceDate and goalId(s): f3466e11-79e3-49fb-8a1f-ae7948039076, 9e489167-8ef8-48e7-965e-c7240e469c6a",
+                  "name": "NotFoundException"
+              }
+          }

@@ -1,0 +1,30 @@
+info:
+  name: Get Call
+  type: http
+  seq: 26
+
+http:
+  method: GET
+  url: "{{baseUrl}}/visits/call"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "CallTime": "14:30:00",
+        "CallDate": "2024-02-13",
+        "ClientId": "3f57f409-330f-4c15-94e2-a6665e9d2d35",
+        "EmployeeId": "2914ec4c-abd6-43a0-ab38-e25b8d988e23",
+        "VisitId": "5ce330b3-2d9f-4bb4-a107-05e3b8c987c3"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

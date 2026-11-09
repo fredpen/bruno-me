@@ -1,0 +1,38 @@
+name: AZ Preprod
+variables:
+  - name: baseUrl
+    value: https://nexvzt-pre-prod.fly.dev
+  - name: email
+    value: foladipupo@potternex.com
+  - name: password
+    value: Potternex@01
+  - secret: true
+    name: token
+  - name: agencyId
+    value: NX12458
+  - name: staffId
+    value: ""
+  - name: visitId
+    value: 70b5c901-1413-4530-a655-1f7f60e6bbf1
+  - name: employeeId
+    value: 56b6b0a4-87a4-4377-a5d3-ec18d477a94f
+  - name: goalId
+    value: ""
+  - name: clientApiKey
+    value: default
+  - name: billingProfileId
+    value: ""
+  - name: progressID
+    value: ""
+  - name: mobileToken
+    value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1NmI2YjBhNC04N2E0LTQzNzctYTVkMy1lYzE4ZDQ3N2E5NGYiLCJlbWFpbCI6InR1bmRlb21vdGludWdib25AZ21haWwuY29tIiwiaXNNb2JpbGVVc2VyIjp0cnVlLCJpYXQiOjE3ODg0NjQzMTUsImV4cCI6MTc4OTA2OTExNX0.WnqnUIPzjZBfRHwloMp1T4ZqMfVDOmAUxGvWy5q4JHo
+  - name: goalId2
+    value: ""
+  - name: templateId
+    value: ""
+  - name: clientId
+    value: 76feb917-cf97-4f83-b614-0de3705ee4bd
+  - name: mobileEmail
+    value: foladipupo@potternex.com
+  - name: mobilePassword
+    value: "&Fm8evCZM&"

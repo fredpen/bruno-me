@@ -1,0 +1,28 @@
+info:
+  name: Remove records from batch cache
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/billing/835/records/96f53418-eb56-438e-8506-4457f190e2e7"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  body:
+    type: json
+    data: |-
+      {
+          "recordIds": [
+              "12d8ea21-ad32-44a2-bbb8-5cbcebb43ecb"
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

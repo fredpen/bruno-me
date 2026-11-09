@@ -1,0 +1,101 @@
+info:
+  name: Get Clients
+  type: http
+  seq: 31
+
+http:
+  method: GET
+  url: "{{baseUrl}}/clients"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: clientFirstName
+      value: ""
+      type: query
+      disabled: true
+    - name: clientLastName
+      value: name
+      type: query
+      disabled: true
+    - name: clientMedicaidId
+      value: ""
+      type: query
+      disabled: true
+    - name: clientIdentifier
+      value: ""
+      type: query
+      disabled: true
+    - name: clientId
+      value: ""
+      type: query
+      disabled: true
+    - name: clientPayerId
+      value: ""
+      type: query
+      disabled: true
+    - name: language
+      value: ""
+      type: query
+      disabled: true
+    - name: primaryPayer
+      value: ""
+      type: query
+      disabled: true
+    - name: program
+      value: ""
+      type: query
+      disabled: true
+    - name: keyword
+      value: ""
+      type: query
+      disabled: true
+    - name: page
+      value: ""
+      type: query
+      disabled: true
+    - name: sortOrder
+      value: ""
+      type: query
+      disabled: true
+    - name: sortField
+      value: ""
+      type: query
+      disabled: true
+    - name: clientStatus
+      value: Inactive
+      type: query
+      disabled: true
+    - name: limit
+      value: "200"
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+        "ProviderQualifier": "string",
+        "ProviderId": "string",
+        "ClientId": "string",
+        "ClientFirstName": "string",
+        "ClientMiddleInitial": "string",
+        "ClientLastName": "string",
+        "ClientQualifier": "string",
+        "ClientIdentifier": "string",
+        "ClientProgram": "string",
+        "ClientMedicaidId": "string",
+        "ClientCustomId": "string",
+        "ClientTimezone": "string",
+        "Coordinator": "string",
+        "ClientStatus": "string"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

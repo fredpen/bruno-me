@@ -1,0 +1,27 @@
+info:
+  name: Get Clients light-mode
+  type: http
+  seq: 32
+
+http:
+  method: GET
+  url: "{{baseUrl}}/clients/light-mode?keyword=fred&clientStatus=INactive"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: keyword
+      value: fred
+      type: query
+    - name: clientStatus
+      value: INactive
+      type: query
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

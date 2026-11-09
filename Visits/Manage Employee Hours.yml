@@ -1,0 +1,163 @@
+info:
+  name: Manage Employee Hours
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{baseUrl}}/visits/employee-hours/3b950854-81ed-48d8-8c4f-e3c99cdec103"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "adjInDateTime": "2025-03-13T16:02:17.604Z",
+        "adjOutDateTime": "2025-03-13T19:08:17.604Z"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: "201"
+    request:
+      url: "{{baseUrl}}/visits/employee-hours/9629f54f-1f5f-4e53-8b01-fb3cd84005a3"
+      method: POST
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+            "callInDateTime": "2025-03-13T16:02:17.604Z",
+            "callOutDateTime": "2025-03-13T19:08:17.604Z"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: access-control-allow-origin
+          value: "*"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: etag
+          value: W/"5fb-MmKKgIGWAMlzMElLQ8tR2IZq+bs"
+        - name: vary
+          value: Accept-Encoding
+        - name: content-encoding
+          value: br
+        - name: date
+          value: Wed, 16 Apr 2025 13:05:25 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+        - name: transfer-encoding
+          value: chunked
+        - name: server
+          value: Fly/df07e263 (2025-04-11)
+        - name: via
+          value: 1.1 fly.io, 1.1 fly.io
+        - name: fly-request-id
+          value: 01JRZB8K0XPZHKPZ7SD819KBT2-lhr
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "changeMadeBy": "victor@gmail.com",
+                  "body": {
+                      "callInDateTime": "2025-03-13T16:02:17.604Z",
+                      "callOutDateTime": "2025-03-13T19:08:17.604Z"
+                  },
+                  "approvalEntityType": "visitHoursChange",
+                  "changeDateTime": "2025-04-16T13:05:25.593Z",
+                  "visit": {
+                      "id": "9629f54f-1f5f-4e53-8b01-fb3cd84005a3",
+                      "groupCode": null,
+                      "visitCancelledIndicator": false,
+                      "payerId": null,
+                      "payerProgram": null,
+                      "procedureCode": null,
+                      "sr": null,
+                      "modifier1": null,
+                      "modifier2": null,
+                      "modifier3": null,
+                      "modifier4": null,
+                      "visitKey": "721098015742",
+                      "scheduleDate": "2025-04-24",
+                      "visitDate": null,
+                      "visitTimeZone": null,
+                      "scheduleStartTime": "2025-04-24T12:00:00.000Z",
+                      "scheduleEndTime": "2025-04-24T16:00:00.000Z",
+                      "callInDateTime": null,
+                      "callOutDateTime": null,
+                      "adjInDateTime": null,
+                      "adjOutDateTime": null,
+                      "billVisit": true,
+                      "payIsSch": false,
+                      "scheduledHours": "4.00",
+                      "callHours": null,
+                      "adjHours": null,
+                      "hoursToBill": null,
+                      "hoursToPay": null,
+                      "memo": null,
+                      "overlappingVisitIds": null,
+                      "hasOverlap": null,
+                      "visitStatus": "scheduled",
+                      "language": null,
+                      "clientVerifiedTimes": false,
+                      "clientVerifiedTasks": false,
+                      "clientVerifiedService": false,
+                      "clientSignatureAvailable": false,
+                      "clientVoiceRecording": false,
+                      "serviceType": "G0152",
+                      "contingencyPlan": null,
+                      "createdAt": "2025-04-14T14:30:01.690Z",
+                      "updatedAt": "2025-04-14T14:30:01.690Z"
+                  },
+                  "approvalStatus": "pending",
+                  "changeApprovedBy": null,
+                  "changeReasonMemo": null,
+                  "id": "e506d3a2-f821-414b-836a-8e39315e48e6",
+                  "createdAt": "2025-04-16T13:05:25.598Z",
+                  "updatedAt": "2025-04-16T13:05:25.598Z"
+              },
+              "code": null,
+              "timestamp": "2025-04-16T13:05:25.632Z"
+          }

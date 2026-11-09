@@ -1,0 +1,37 @@
+info:
+  name: Create Role
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/roles"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |
+      {
+        "name": "Admin",
+        "permissions": [
+          "payins:read",
+          "payouts:write:*",
+          "virtual-accounts:create"
+        ],
+        "merchantId": "550e8400-e29b-41d4-a716-446655440000",
+        "parentRoleId": "550e8400-e29b-41d4-a716-446655440001",
+        "metadata": {
+          "description": "Full admin access"
+        },
+        "createdBy": "550e8400-e29b-41d4-a716-446655440002"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

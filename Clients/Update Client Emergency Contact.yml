@@ -1,0 +1,35 @@
+info:
+  name: Update Client Emergency Contact
+  type: http
+  seq: 11
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/clients/emergency-contact/b01ccf5b-98d7-4908-864e-88e2aae7cc49"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |
+      {
+        "type": "Parent",
+        "relationship": "Father",
+        "firstName": "John",
+        "middleName": "A.",
+        "lastName": "Doe",
+        "language": "English",
+        "emailAddress": "john.doe@example.com",
+        "title": "Sir",
+        "dob": "21-02-2021",
+        "gender": "male"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

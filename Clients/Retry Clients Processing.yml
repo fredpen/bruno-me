@@ -1,0 +1,26 @@
+info:
+  name: Retry Clients Processing
+  type: http
+  seq: 40
+
+http:
+  method: POST
+  url: "{{baseUrl}}/clients/retry-processing/a40d81fc-8164-44b7-a124-09389cbe313d"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "visitIds": []
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

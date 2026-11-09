@@ -1,0 +1,33 @@
+info:
+  name: My device has an active token
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{baseUrl}}/push-tokens/device/active?deviceId={{deviceId}}"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: deviceId
+      value: 2a13b758-7b86-417e-a84a-baf15e778f68
+      type: query
+      disabled: true
+    - name: deviceId
+      value: "{{deviceId}}"
+      type: query
+  auth:
+    type: bearer
+    token: "{{mobileToken}}"
+
+runtime:
+  variables:
+    - name: deviceId
+      value: 9d66f7e7-b05f-4ad0-bdc2-d15fd226e926
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

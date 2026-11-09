@@ -1,0 +1,51 @@
+info:
+  name: 835 Records
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/billing/835/records?pageSize=10&pageNumber=1&clientId="
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  params:
+    - name: pageSize
+      value: "10"
+      type: query
+    - name: pageNumber
+      value: "1"
+      type: query
+    - name: clientId
+      value: ""
+      type: query
+    - name: serviceDateStart
+      value: 2026-03-01
+      type: query
+      disabled: true
+    - name: serviceDateEnd
+      value: 2026-03-31
+      type: query
+      disabled: true
+    - name: serviceCode
+      value: S5125
+      type: query
+      disabled: true
+    - name: denialCode
+      value: A0004
+      type: query
+      disabled: true
+    - name: modifier
+      value: CG,TN
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

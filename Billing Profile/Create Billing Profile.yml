@@ -1,0 +1,65 @@
+info:
+  name: Create Billing Profile
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/billing-profiles"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: ""
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+          "profileName": "profileName",
+          "sender": "sender",
+          "address": "address",
+          "contactName": "contactName",
+          "email": "email",
+          "city": "city",
+          "state": "state",
+          "zipCode": "zipCode",
+          "ein": "ein",
+          "agencyName": "agencyName",
+          "contactPhone": "contactPhone",
+          "providerMedicaid": "providerMedicaid",
+          "payer": "payer",
+          "payerId": "payerId",
+          "isActive": false,
+          "refId": "refId",
+          "receiverId": "receiverId",
+          "receiverCode": "somecode",
+          "receiverOrganisationName": "receiverOrganisationName",
+          "receiverIdentificationQualifier": "receiverIdentificationQualifier",
+          "receiverIdentificationCode": "receiverIdentificationCode",
+          "renderingProvider": "renderingProvider",
+          "groupControlNumber": "groupControlNumber",
+          "submitterIdentificationQualifier": "submitterIdentificationQualifier",
+          "submitterCommNumberQualifier": "submitterCommNumberQualifier",
+          "providerIdentificationCodeQualifier": "providerIdentificationCodeQualifier",
+          "providerIdentificationCode": "providerIdentificationCode",
+          "providerSecondaryIdentificationCodeQualifier": "providerSecondaryIdentificationCodeQualifier",
+          "subscriberClaimFilingIndicator": "Fred subscriberClaimFilingIndicator",
+          "payerOrganisationName": "fred payerOrganisationName",
+          "payerOrganisationQualifier": "payerOrganisationQualifier",
+          "payerIdentificationCode": "payerIdentificationCode",
+          "providerRefIdentificationQualifier": "fred"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new billing profile.

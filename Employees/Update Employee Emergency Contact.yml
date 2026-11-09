@@ -1,0 +1,35 @@
+info:
+  name: Update Employee Emergency Contact
+  type: http
+  seq: 16
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/employees/5d551e07-9c04-49fa-8d5b-e1fd53635470/emergency-contact"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "type": "Parent",
+          "relationship": "Father",
+          "firstName": "John",
+          "middleName": "A.",
+          "lastName": "Doe",
+          "language": "English",
+          "emailAddress": "john.doe@example.com",
+          "title": "Sir",
+          "dob": "21-02-2021",
+          "gender": "female"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

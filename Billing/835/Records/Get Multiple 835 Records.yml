@@ -1,0 +1,34 @@
+info:
+  name: Get Multiple 835 Records
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/billing/835/multiple-records"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  body:
+    type: json
+    data: |-
+      {
+          "batches": [
+              {
+                  "clientId": "e7b5f707-13e8-4ccb-9fba-cbd626bfbd0c",
+                  "modifiers": "",
+                  "payer": "AZDDD",
+                  "serviceCode": "S5125",
+                  "serviceDateStart": "2025-12-07"
+              }
+          ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,41 @@
+info:
+  name: Clear and reset batch cache
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/billing/batch"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: x-client-api-key
+      value: default
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      [
+          {
+              "clientId": "155524c4-d308-4265-b489-766ba3e123f7",
+              "data": {
+                  "modifier": {
+                      "newValue": "UJ",
+                      "currentValue": "UF"
+                  },
+                  "serviceType": {
+                      "newValue": "S5125",
+                      "currentValue": "S3120"
+                  }
+              }
+          }
+      ]
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

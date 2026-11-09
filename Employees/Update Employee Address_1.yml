@@ -1,0 +1,35 @@
+info:
+  name: Update Employee Address_1
+  type: http
+  seq: 23
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/employees/addresses/92d9a01b-2f0d-4799-8144-a0d996ecbf23"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "employeeAddressType": "home",
+        "employeeAddressIsPrimary": true,
+        "employeeAddressLine1": "Google LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043, United States",
+        "employeeAddressLine2": "string",
+        "employeeCounty": "string",
+        "employeeCity": "string",
+        "employeeState": "string",
+        "employeeZip": "string",
+        "employeeAddressLongitude": 34.0489,
+        "employeeAddressLatitude": -111.093735
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

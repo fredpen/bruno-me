@@ -1,0 +1,7 @@
+info:
+  name: "FTP Connections "
+  type: folder
+  seq: 27
+
+request:
+  auth: inherit

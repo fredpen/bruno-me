@@ -1,0 +1,27 @@
+info:
+  name: Add Employee Phone
+  type: http
+  seq: 19
+
+http:
+  method: POST
+  url: "{{baseUrl}}/employees/4dcf0967-83b6-4d73-be83-9ad6fb64b4fd/phones"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "employeePhoneType": "home",
+        "employeePhone": "123456789"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

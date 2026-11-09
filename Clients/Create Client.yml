@@ -1,0 +1,36 @@
+info:
+  name: Create Client
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/clients"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "clientId": "512246",
+          "clientFirstName": "Ealy",
+          "clientMiddleInitial": "A",
+          "clientLastName": "Jones",
+          "clientQualifier": "MedicaidID",
+          "clientIdentifier": "A72211756",
+          "clientProgram": "AHCCCS",
+          "clientMedicaidId": "A76512222",
+          "clientCustomId": "A41122516",
+          "clientTimezone": "America/Phoenix",
+          "clientStatus": "Active"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

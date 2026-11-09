@@ -1,0 +1,629 @@
+info:
+  name: Get Visits
+  type: http
+  seq: 29
+
+http:
+  method: GET
+  url: "{{baseUrl}}/visits/admin?page=1&limit=25&sortField=scheduleStartTime&sortOrder=asc&startDate=2026-01-16&endDate=2026-01-16"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: limit
+      value: "25"
+      type: query
+    - name: sortField
+      value: scheduleStartTime
+      type: query
+    - name: sortOrder
+      value: asc
+      type: query
+    - name: startDate
+      value: 2026-01-16
+      type: query
+    - name: endDate
+      value: 2026-01-16
+      type: query
+    - name: visitStatus
+      value: incomplete
+      type: query
+      disabled: true
+    - name: visitStatus
+      value: in process
+      type: query
+      disabled: true
+    - name: employeeId
+      value: 821d5f42-2e25-4f56-915e-7bc5923ed2f7
+      type: query
+      disabled: true
+    - name: employeeId
+      value: 7f7cd65d-edd0-44e1-aa63-81198741e4c6
+      type: query
+      disabled: true
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Get Visits
+    request:
+      url: "{{baseUrl}}/visits/admin"
+      method: GET
+      headers:
+        - name: x-client-api-key
+          value: default
+      params:
+        - name: visitStatus
+          value: scheduled
+          type: query
+          disabled: true
+        - name: visitStatus
+          value: ""
+          type: query
+          disabled: true
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: ETag
+          value: W/"300c-rflRejXyJOnS2+l+ZgGV2o+s/kI"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: br
+        - name: Date
+          value: Mon, 24 Mar 2025 09:27:20 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "total": 4,
+                  "page": 1,
+                  "limit": 100,
+                  "totalPages": 1,
+                  "data": [
+                      {
+                          "id": "60bc0a14-eef5-49f3-9dac-c34764ae28d2",
+                          "groupCode": null,
+                          "visitCancelledIndicator": false,
+                          "payerId": null,
+                          "payerProgram": null,
+                          "procedureCode": null,
+                          "sr": null,
+                          "modifier1": null,
+                          "modifier2": null,
+                          "modifier3": null,
+                          "modifier4": null,
+                          "visitKey": null,
+                          "scheduleDate": "2025-03-24",
+                          "visitDate": null,
+                          "visitTimeZone": null,
+                          "scheduleStartTime": "2025-03-24T09:16:40.386Z",
+                          "scheduleEndTime": null,
+                          "callInDateTime": "2025-03-24T09:16:40.386Z",
+                          "callOutDateTime": "2025-03-24T09:21:48.164Z",
+                          "adjInDateTime": "2025-03-24T09:16:40.386Z",
+                          "adjOutDateTime": "2025-03-24T09:21:48.164Z",
+                          "billVisit": true,
+                          "payIsSch": false,
+                          "scheduledHours": null,
+                          "callHours": "0.09",
+                          "adjHours": "0.09",
+                          "hoursToBill": "0.09",
+                          "hoursToPay": "0.09",
+                          "memo": null,
+                          "visitStatus": "incomplete",
+                          "language": null,
+                          "clientVerifiedTimes": false,
+                          "clientVerifiedTasks": false,
+                          "clientVerifiedService": false,
+                          "clientSignatureAvailable": false,
+                          "clientVoiceRecording": false,
+                          "serviceType": null,
+                          "createdAt": "2025-03-24T09:16:40.401Z",
+                          "updatedAt": "2025-03-24T09:21:48.196Z",
+                          "client": null,
+                          "employee": {
+                              "id": "b159d833-61c4-47f4-b73a-6b4ee0f3da33",
+                              "employeeId": null,
+                              "employeeQualifier": "EmployeeSSN",
+                              "employeeStatus": "string",
+                              "employeeIdentifier": "123456789",
+                              "employeeOtherId": "string",
+                              "sequenceId": "2025-03-24T09:16:33.691Z",
+                              "isSupervisor": true,
+                              "employeeSSN": "123456789",
+                              "employeeLastName": "string",
+                              "employeeFirstName": "string",
+                              "employeeEmail": "email@email.com",
+                              "employeeManagerEmail": "string@example.com",
+                              "employeeAPI": "string",
+                              "employeePosition": "2",
+                              "employeeHireDate": "2025-01-21",
+                              "employeeEndDate": "2025-01-21",
+                              "createdAt": "2025-03-24T09:16:33.691Z",
+                              "updatedAt": "2025-03-24T09:16:33.691Z",
+                              "autoSRDetectionEnabled": false
+                          },
+                          "visitTasks": [],
+                          "visitExceptionAcknowledgement": [
+                              {
+                                  "id": "da68cc3f-74aa-42d4-a506-300492605833",
+                                  "exceptionTitle": "Visit Verification Exception",
+                                  "exceptionId": "28",
+                                  "exceptionPriority": null,
+                                  "exceptionAcknowledged": false,
+                                  "createdAt": "2025-03-24T09:21:48.176Z",
+                                  "updatedAt": "2025-03-24T09:21:48.176Z"
+                              },
+                              {
+                                  "id": "aed38e70-fc6a-43a8-9b18-8b072329b580",
+                                  "exceptionTitle": "Service Verification Exception",
+                                  "exceptionId": "40",
+                                  "exceptionPriority": null,
+                                  "exceptionAcknowledged": false,
+                                  "createdAt": "2025-03-24T09:21:48.176Z",
+                                  "updatedAt": "2025-03-24T09:21:48.176Z"
+                              },
+                              {
+                                  "id": "b7498d1d-d54a-4a27-82e1-d18ab1c2af5a",
+                                  "exceptionTitle": "Client Signature Verification",
+                                  "exceptionId": "39",
+                                  "exceptionPriority": null,
+                                  "exceptionAcknowledged": false,
+                                  "createdAt": "2025-03-24T09:21:48.176Z",
+                                  "updatedAt": "2025-03-24T09:21:48.176Z"
+                              },
+                              {
+                                  "id": "decf49c4-8430-4808-b956-4cea32554b05",
+                                  "exceptionTitle": "Unknown Client",
+                                  "exceptionId": "0",
+                                  "exceptionPriority": "1",
+                                  "exceptionAcknowledged": false,
+                                  "createdAt": "2025-03-24T09:21:48.176Z",
+                                  "updatedAt": "2025-03-24T09:21:48.176Z"
+                              },
+                              {
+                                  "id": "4f480c42-8d45-460b-8de7-047951766b71",
+                                  "exceptionTitle": "Missing service",
+                                  "exceptionId": "23",
+                                  "exceptionPriority": "1",
+                                  "exceptionAcknowledged": false,
+                                  "createdAt": "2025-03-24T09:21:48.176Z",
+                                  "updatedAt": "2025-03-24T09:21:48.176Z"
+                              },
+                              {
+                                  "id": "325244f0-8088-43a6-ba4d-b7dc767a22a7",
+                                  "exceptionTitle": "Unscheduled Visit",
+                                  "exceptionId": "5",
+                                  "exceptionPriority": null,
+                                  "exceptionAcknowledged": false,
+                                  "createdAt": "2025-03-24T09:21:48.176Z",
+                                  "updatedAt": "2025-03-24T09:21:48.176Z"
+                              }
+                          ],
+                          "call": {
+                              "id": "5b633cc3-f5d9-4029-931f-783e001489c5",
+                              "callExternalId": null,
+                              "callDateTime": "2025-03-24T09:16:40.386Z",
+                              "callDate": null,
+                              "callTime": null,
+                              "callTimezone": null,
+                              "callAssignment": "Time In",
+                              "groupCode": null,
+                              "callType": null,
+                              "procedureCode": null,
+                              "clientIdentifierOnCall": null,
+                              "mobileLogin": null,
+                              "callInLatitude": null,
+                              "callInLongitude": null,
+                              "callOutLatitude": 9.4567,
+                              "callOutLongitude": 7.8234,
+                              "location": null,
+                              "telephonyPin": null,
+                              "originatingPhoneNumber": null,
+                              "createdAt": "2025-03-24T09:16:40.393Z",
+                              "updatedAt": "2025-03-24T09:17:16.458Z"
+                          },
+                          "visitChanges": []
+                      },
+                      {
+                          "id": "4ea76b27-3c9f-4e40-9652-5af57445e0c6",
+                          "groupCode": null,
+                          "visitCancelledIndicator": false,
+                          "payerId": null,
+                          "payerProgram": null,
+                          "procedureCode": null,
+                          "sr": null,
+                          "modifier1": null,
+                          "modifier2": null,
+                          "modifier3": null,
+                          "modifier4": null,
+                          "visitKey": "702737836303",
+                          "scheduleDate": null,
+                          "visitDate": null,
+                          "visitTimeZone": null,
+                          "scheduleStartTime": null,
+                          "scheduleEndTime": null,
+                          "callInDateTime": null,
+                          "callOutDateTime": null,
+                          "adjInDateTime": null,
+                          "adjOutDateTime": null,
+                          "billVisit": true,
+                          "payIsSch": false,
+                          "scheduledHours": null,
+                          "callHours": null,
+                          "adjHours": null,
+                          "hoursToBill": null,
+                          "hoursToPay": null,
+                          "memo": null,
+                          "visitStatus": "scheduled",
+                          "language": null,
+                          "clientVerifiedTimes": false,
+                          "clientVerifiedTasks": false,
+                          "clientVerifiedService": false,
+                          "clientSignatureAvailable": false,
+                          "clientVoiceRecording": false,
+                          "serviceType": null,
+                          "createdAt": "2025-03-24T08:29:43.680Z",
+                          "updatedAt": "2025-03-24T08:29:43.680Z",
+                          "client": {
+                              "id": "c1e234cf-1441-4435-8027-a87e10352a41",
+                              "clientId": "293659",
+                              "clientStatus": "Active",
+                              "clientFirstName": "Emiliano",
+                              "language": null,
+                              "clientMiddleInitial": "M",
+                              "clientLastName": "Botello",
+                              "clientQualifier": "string",
+                              "clientMedicaidId": "A12345678",
+                              "clientIdentifier": "A12345678",
+                              "clientProgram": "string",
+                              "missingMedicaidId": null,
+                              "sequenceId": "2025-03-24T07:25:40.634Z",
+                              "clientCustomId": "A12345678",
+                              "clientOtherId": null,
+                              "clientSSN": null,
+                              "clientTimezone": "UTC+3",
+                              "coordinator": "string",
+                              "lastBilled": null,
+                              "createdAt": "2025-03-24T07:25:40.634Z",
+                              "updatedAt": "2025-03-24T07:37:05.122Z",
+                              "autoClockoutAtMidnightEnabled": true,
+                              "autoSRDetectionEnabled": true,
+                              "autoScheduleGenerationEnabled": false,
+                              "autoScheduleGenerationDetails": null
+                          },
+                          "employee": {
+                              "id": "84485a29-75fb-445a-9825-c753dcec5ca4",
+                              "employeeId": null,
+                              "employeeQualifier": "EmployeeSSN",
+                              "employeeStatus": "string",
+                              "employeeIdentifier": "123456789",
+                              "employeeOtherId": "string",
+                              "sequenceId": "2025-03-24T08:27:31.942Z",
+                              "isSupervisor": true,
+                              "employeeSSN": "123456789",
+                              "employeeLastName": "string",
+                              "employeeFirstName": "string",
+                              "employeeEmail": "string@example.com",
+                              "employeeManagerEmail": "string@example.com",
+                              "employeeAPI": "string",
+                              "employeePosition": "2",
+                              "employeeHireDate": "2025-01-21",
+                              "employeeEndDate": "2025-01-21",
+                              "createdAt": "2025-03-24T08:27:31.942Z",
+                              "updatedAt": "2025-03-24T08:27:31.942Z",
+                              "autoSRDetectionEnabled": false
+                          },
+                          "visitTasks": [],
+                          "visitExceptionAcknowledgement": [],
+                          "call": {
+                              "id": "11404530-d551-4957-a22c-469c6ee6f013",
+                              "callExternalId": null,
+                              "callDateTime": null,
+                              "callDate": null,
+                              "callTime": null,
+                              "callTimezone": null,
+                              "callAssignment": null,
+                              "groupCode": null,
+                              "callType": null,
+                              "procedureCode": null,
+                              "clientIdentifierOnCall": null,
+                              "mobileLogin": null,
+                              "callInLatitude": null,
+                              "callInLongitude": null,
+                              "callOutLatitude": null,
+                              "callOutLongitude": null,
+                              "location": null,
+                              "telephonyPin": null,
+                              "originatingPhoneNumber": null,
+                              "createdAt": "2025-03-24T08:29:43.678Z",
+                              "updatedAt": "2025-03-24T08:29:43.678Z"
+                          },
+                          "visitChanges": []
+                      },
+                      {
+                          "id": "a1ef262f-acfe-4f89-abe6-cd4a7dd8780a",
+                          "groupCode": null,
+                          "visitCancelledIndicator": false,
+                          "payerId": null,
+                          "payerProgram": null,
+                          "procedureCode": null,
+                          "sr": null,
+                          "modifier1": null,
+                          "modifier2": null,
+                          "modifier3": null,
+                          "modifier4": null,
+                          "visitKey": "702737666302",
+                          "scheduleDate": null,
+                          "visitDate": null,
+                          "visitTimeZone": null,
+                          "scheduleStartTime": null,
+                          "scheduleEndTime": null,
+                          "callInDateTime": null,
+                          "callOutDateTime": null,
+                          "adjInDateTime": null,
+                          "adjOutDateTime": null,
+                          "billVisit": true,
+                          "payIsSch": false,
+                          "scheduledHours": null,
+                          "callHours": null,
+                          "adjHours": null,
+                          "hoursToBill": null,
+                          "hoursToPay": null,
+                          "memo": null,
+                          "visitStatus": "scheduled",
+                          "language": null,
+                          "clientVerifiedTimes": false,
+                          "clientVerifiedTasks": false,
+                          "clientVerifiedService": false,
+                          "clientSignatureAvailable": false,
+                          "clientVoiceRecording": false,
+                          "serviceType": null,
+                          "createdAt": "2025-03-24T08:29:26.228Z",
+                          "updatedAt": "2025-03-24T08:29:26.228Z",
+                          "client": {
+                              "id": "c1e234cf-1441-4435-8027-a87e10352a41",
+                              "clientId": "293659",
+                              "clientStatus": "Active",
+                              "clientFirstName": "Emiliano",
+                              "language": null,
+                              "clientMiddleInitial": "M",
+                              "clientLastName": "Botello",
+                              "clientQualifier": "string",
+                              "clientMedicaidId": "A12345678",
+                              "clientIdentifier": "A12345678",
+                              "clientProgram": "string",
+                              "missingMedicaidId": null,
+                              "sequenceId": "2025-03-24T07:25:40.634Z",
+                              "clientCustomId": "A12345678",
+                              "clientOtherId": null,
+                              "clientSSN": null,
+                              "clientTimezone": "UTC+3",
+                              "coordinator": "string",
+                              "lastBilled": null,
+                              "createdAt": "2025-03-24T07:25:40.634Z",
+                              "updatedAt": "2025-03-24T07:37:05.122Z",
+                              "autoClockoutAtMidnightEnabled": true,
+                              "autoSRDetectionEnabled": true,
+                              "autoScheduleGenerationEnabled": false,
+                              "autoScheduleGenerationDetails": null
+                          },
+                          "employee": {
+                              "id": "84485a29-75fb-445a-9825-c753dcec5ca4",
+                              "employeeId": null,
+                              "employeeQualifier": "EmployeeSSN",
+                              "employeeStatus": "string",
+                              "employeeIdentifier": "123456789",
+                              "employeeOtherId": "string",
+                              "sequenceId": "2025-03-24T08:27:31.942Z",
+                              "isSupervisor": true,
+                              "employeeSSN": "123456789",
+                              "employeeLastName": "string",
+                              "employeeFirstName": "string",
+                              "employeeEmail": "string@example.com",
+                              "employeeManagerEmail": "string@example.com",
+                              "employeeAPI": "string",
+                              "employeePosition": "2",
+                              "employeeHireDate": "2025-01-21",
+                              "employeeEndDate": "2025-01-21",
+                              "createdAt": "2025-03-24T08:27:31.942Z",
+                              "updatedAt": "2025-03-24T08:27:31.942Z",
+                              "autoSRDetectionEnabled": false
+                          },
+                          "visitTasks": [],
+                          "visitExceptionAcknowledgement": [],
+                          "call": {
+                              "id": "a43b4c4e-162a-44cc-9bae-1222ecba711b",
+                              "callExternalId": null,
+                              "callDateTime": null,
+                              "callDate": null,
+                              "callTime": null,
+                              "callTimezone": null,
+                              "callAssignment": null,
+                              "groupCode": null,
+                              "callType": null,
+                              "procedureCode": null,
+                              "clientIdentifierOnCall": null,
+                              "mobileLogin": null,
+                              "callInLatitude": null,
+                              "callInLongitude": null,
+                              "callOutLatitude": null,
+                              "callOutLongitude": null,
+                              "location": null,
+                              "telephonyPin": null,
+                              "originatingPhoneNumber": null,
+                              "createdAt": "2025-03-24T08:29:26.222Z",
+                              "updatedAt": "2025-03-24T08:29:26.222Z"
+                          },
+                          "visitChanges": []
+                      },
+                      {
+                          "id": "2db76dcd-13a4-4eb6-b980-e900f994a63e",
+                          "groupCode": null,
+                          "visitCancelledIndicator": false,
+                          "payerId": null,
+                          "payerProgram": null,
+                          "procedureCode": null,
+                          "sr": null,
+                          "modifier1": null,
+                          "modifier2": null,
+                          "modifier3": null,
+                          "modifier4": null,
+                          "visitKey": "702736656301",
+                          "scheduleDate": null,
+                          "visitDate": null,
+                          "visitTimeZone": null,
+                          "scheduleStartTime": null,
+                          "scheduleEndTime": null,
+                          "callInDateTime": null,
+                          "callOutDateTime": null,
+                          "adjInDateTime": null,
+                          "adjOutDateTime": null,
+                          "billVisit": true,
+                          "payIsSch": false,
+                          "scheduledHours": null,
+                          "callHours": null,
+                          "adjHours": null,
+                          "hoursToBill": null,
+                          "hoursToPay": null,
+                          "memo": null,
+                          "visitStatus": "scheduled",
+                          "language": null,
+                          "clientVerifiedTimes": false,
+                          "clientVerifiedTasks": false,
+                          "clientVerifiedService": false,
+                          "clientSignatureAvailable": false,
+                          "clientVoiceRecording": false,
+                          "serviceType": null,
+                          "createdAt": "2025-03-24T08:27:45.046Z",
+                          "updatedAt": "2025-03-24T08:27:45.046Z",
+                          "client": {
+                              "id": "c1e234cf-1441-4435-8027-a87e10352a41",
+                              "clientId": "293659",
+                              "clientStatus": "Active",
+                              "clientFirstName": "Emiliano",
+                              "language": null,
+                              "clientMiddleInitial": "M",
+                              "clientLastName": "Botello",
+                              "clientQualifier": "string",
+                              "clientMedicaidId": "A12345678",
+                              "clientIdentifier": "A12345678",
+                              "clientProgram": "string",
+                              "missingMedicaidId": null,
+                              "sequenceId": "2025-03-24T07:25:40.634Z",
+                              "clientCustomId": "A12345678",
+                              "clientOtherId": null,
+                              "clientSSN": null,
+                              "clientTimezone": "UTC+3",
+                              "coordinator": "string",
+                              "lastBilled": null,
+                              "createdAt": "2025-03-24T07:25:40.634Z",
+                              "updatedAt": "2025-03-24T07:37:05.122Z",
+                              "autoClockoutAtMidnightEnabled": true,
+                              "autoSRDetectionEnabled": true,
+                              "autoScheduleGenerationEnabled": false,
+                              "autoScheduleGenerationDetails": null
+                          },
+                          "employee": {
+                              "id": "84485a29-75fb-445a-9825-c753dcec5ca4",
+                              "employeeId": null,
+                              "employeeQualifier": "EmployeeSSN",
+                              "employeeStatus": "string",
+                              "employeeIdentifier": "123456789",
+                              "employeeOtherId": "string",
+                              "sequenceId": "2025-03-24T08:27:31.942Z",
+                              "isSupervisor": true,
+                              "employeeSSN": "123456789",
+                              "employeeLastName": "string",
+                              "employeeFirstName": "string",
+                              "employeeEmail": "string@example.com",
+                              "employeeManagerEmail": "string@example.com",
+                              "employeeAPI": "string",
+                              "employeePosition": "2",
+                              "employeeHireDate": "2025-01-21",
+                              "employeeEndDate": "2025-01-21",
+                              "createdAt": "2025-03-24T08:27:31.942Z",
+                              "updatedAt": "2025-03-24T08:27:31.942Z",
+                              "autoSRDetectionEnabled": false
+                          },
+                          "visitTasks": [],
+                          "visitExceptionAcknowledgement": [],
+                          "call": {
+                              "id": "a73dafab-1739-4b42-bf24-370361c7fcfa",
+                              "callExternalId": null,
+                              "callDateTime": null,
+                              "callDate": null,
+                              "callTime": null,
+                              "callTimezone": null,
+                              "callAssignment": null,
+                              "groupCode": null,
+                              "callType": null,
+                              "procedureCode": null,
+                              "clientIdentifierOnCall": null,
+                              "mobileLogin": null,
+                              "callInLatitude": null,
+                              "callInLongitude": null,
+                              "callOutLatitude": null,
+                              "callOutLongitude": null,
+                              "location": null,
+                              "telephonyPin": null,
+                              "originatingPhoneNumber": null,
+                              "createdAt": "2025-03-24T08:27:45.036Z",
+                              "updatedAt": "2025-03-24T08:27:45.036Z"
+                          },
+                          "visitChanges": []
+                      }
+                  ]
+              },
+              "code": null,
+              "timestamp": "2025-03-24T09:27:20.151Z"
+          }

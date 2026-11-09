@@ -1,0 +1,35 @@
+info:
+  name: Create Call
+  type: http
+  seq: 25
+
+http:
+  method: POST
+  url: "{{baseUrl}}/visits/call"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "callInDateTime": "2026-02-02T01:00:00.000Z",
+          "callOutDateTime": "2026-02-02T05:00:00.000Z",
+          "groupCode": "400824",
+          "location": "Home",
+          "clientId": "{{clientId}}",
+          "employeeId": "{{employeeId}}",
+          "timeZone": "US/Arizona",
+          "serviceType": "S5125",
+          "modifier1": "",
+          "modifier2": "",
+          "modifier3": "",
+          "modifier4": ""
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

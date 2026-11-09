@@ -1,0 +1,26 @@
+info:
+  name: Retry employee processing
+  type: http
+  seq: 26
+
+http:
+  method: POST
+  url: "{{baseUrl}}/employees/retry-processing/c1e79d4e-a88e-4dc6-9005-22a1adac1635"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "visitIds": []
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

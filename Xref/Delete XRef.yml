@@ -1,0 +1,19 @@
+info:
+  name: Delete XRef
+  type: http
+  seq: 4
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/xref/{{xrefId}}"
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Deletes the XRef record identified by the `xrefId` variable. A successful deletion will return a `204 No Content` status.

@@ -1,0 +1,29 @@
+info:
+  name: Update Xref
+  type: http
+  seq: 3
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/xref/{{xrefId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "xrefEndDate": "2025-12-31",
+          "liveIn": false
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Updates an existing XRef record using the `xrefId`. This example updates the end date and the live-in status.

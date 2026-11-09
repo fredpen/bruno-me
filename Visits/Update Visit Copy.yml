@@ -1,0 +1,28 @@
+info:
+  name: Update Visit Copy
+  type: http
+  seq: 12
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/visits/delete"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "visitIds": [
+              "2244b0df-9f8c-4a2f-ab10-13d3bd9ed1c7"
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

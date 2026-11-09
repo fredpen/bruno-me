@@ -1,0 +1,24 @@
+info:
+  name: Update Visit
+  type: http
+  seq: 11
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/visits/f643242f-fe45-4fb4-823b-56d9752db8c4"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "adjInDateTime": "2025-03-13T16:02:17.604Z"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,77 @@
+info:
+  name: Create Billing Profile Copy
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/billing-profiles"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: ""
+      value: ""
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: |-
+      {
+          "profileName": "Fred AZnDD",
+          "sender": "dsdsds",
+          "address": "sdsdsdd",
+          "contactName": "sdsd",
+          "email": "test@test.com",
+          "city": "sdsds",
+          "state": "CT",
+          "zipCode": "23232-3333",
+          "ein": "123456789",
+          "agencyName": "32323232",
+          "contactPhone": "2323232323",
+          "providerMedicaid": "222222",
+          "payer": "AZMCC",
+          "payerId": "32323",
+          "isActive": false,
+          "refId": "sdsdsdsd",
+          "interchangeSenderId": "wewewe",
+          "receiverId": "wewewe",
+          "receiverCode": "wewewe",
+          "groupControlNumber": "3232323",
+          "submitterOrgName": "32323232",
+          "submitterIdentificationQualifier": "46",
+          "submitterIdCode": "dsdsds",
+          "submitterContactName": "",
+          "submitterCommNumberQualifier": "EM",
+          "submitterContactEmail": "",
+          "receiverOrganisationName": "",
+          "receiverIdentificationQualifier": "46",
+          "receiverIdentificationCode": "",
+          "renderingProvider": "",
+          "billingProviderOrgName": "32323232",
+          "providerIdentificationCodeQualifier": "",
+          "providerIdentificationCode": "",
+          "billingProviderAddress": "",
+          "billingProviderCity": "",
+          "billingProviderState": "",
+          "billingProviderZipCode": "",
+          "providerSecondaryIdentificationCodeQualifier": "EI",
+          "billingProviderSecondaryId": "123456789",
+          "subscriberClaimFilingIndicator": "",
+          "payerOrganisationName": "",
+          "payerOrganisationQualifier": "PI",
+          "payerIdentificationCode": "",
+          "providerRefIdentificationQualifier": "",
+          "providerRefId": "AHCCCS"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new billing profile.

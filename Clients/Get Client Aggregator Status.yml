@@ -1,0 +1,20 @@
+info:
+  name: Get Client Aggregator Status
+  type: http
+  seq: 35
+
+http:
+  method: GET
+  url: "{{baseUrl}}/clients/aggregator-status/{{clientId}}/{{aggregatorId}}"
+  headers:
+    - name: x-client-api-key
+      value: default
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

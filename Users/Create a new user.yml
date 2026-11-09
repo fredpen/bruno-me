@@ -1,0 +1,29 @@
+info:
+  name: Create a new user
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/users"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "email": "john.doe@example.com",
+        "firstName": "John",
+        "lastName": "Doe",
+        "password": "StrongP@ssword123"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new user account. Based on the inferred CreateUserDto.

@@ -1,0 +1,143 @@
+info:
+  name: Approve or decline request
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/approval/2a6360db-a5d7-44d9-97eb-f8804cf6bd72/approve"
+  headers:
+    - name: x-client-api-key
+      value: default
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Success
+    request:
+      url: "{{baseUrl}}/approval/2a6360db-a5d7-44d9-97eb-f8804cf6bd72/approve"
+      method: PATCH
+      headers:
+        - name: x-client-api-key
+          value: default
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: ETag
+          value: W/"600-mXXoFN4FXsN+yz0ZcbLbKosk6mA"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: br
+        - name: Date
+          value: Wed, 16 Apr 2025 13:35:09 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "id": "2a6360db-a5d7-44d9-97eb-f8804cf6bd72",
+                  "changeMadeBy": "string@example.com",
+                  "body": {
+                      "callInDateTime": "2025-03-13T16:02:17.604Z",
+                      "callOutDateTime": "2025-03-13T19:08:17.604Z"
+                  },
+                  "approvalStatus": "approved",
+                  "approvalEntityType": "visitHoursChange",
+                  "changeApprovedBy": null,
+                  "changeDateTime": "2025-04-16T12:38:30.261Z",
+                  "changeReasonMemo": null,
+                  "createdAt": "2025-04-16T12:38:30.262Z",
+                  "updatedAt": "2025-04-16T13:35:09.694Z",
+                  "visit": {
+                      "id": "25f2ff11-a119-46fa-8c2b-35099d1ae763",
+                      "groupCode": null,
+                      "visitCancelledIndicator": false,
+                      "payerId": null,
+                      "payerProgram": null,
+                      "procedureCode": null,
+                      "sr": null,
+                      "modifier1": null,
+                      "modifier2": null,
+                      "modifier3": null,
+                      "modifier4": null,
+                      "visitKey": "722159966302",
+                      "scheduleDate": "2025-04-10",
+                      "visitDate": null,
+                      "visitTimeZone": null,
+                      "scheduleStartTime": "2025-04-10T11:00:00.000Z",
+                      "scheduleEndTime": "2025-04-11T09:00:00.000Z",
+                      "callInDateTime": null,
+                      "callOutDateTime": null,
+                      "adjInDateTime": null,
+                      "adjOutDateTime": null,
+                      "billVisit": true,
+                      "payIsSch": false,
+                      "scheduledHours": "22.00",
+                      "callHours": null,
+                      "adjHours": null,
+                      "hoursToBill": null,
+                      "hoursToPay": null,
+                      "memo": null,
+                      "overlappingVisitIds": null,
+                      "hasOverlap": null,
+                      "visitStatus": "scheduled",
+                      "language": null,
+                      "clientVerifiedTimes": false,
+                      "clientVerifiedTasks": false,
+                      "clientVerifiedService": false,
+                      "clientSignatureAvailable": false,
+                      "clientVoiceRecording": false,
+                      "serviceType": "string",
+                      "contingencyPlan": null,
+                      "createdAt": "2025-04-15T19:59:56.660Z",
+                      "updatedAt": "2025-04-15T19:59:56.660Z"
+                  }
+              },
+              "code": null,
+              "timestamp": "2025-04-16T13:35:09.697Z"
+          }

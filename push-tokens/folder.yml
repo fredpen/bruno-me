@@ -1,0 +1,7 @@
+info:
+  name: push-tokens
+  type: folder
+  seq: 25
+
+request:
+  auth: inherit

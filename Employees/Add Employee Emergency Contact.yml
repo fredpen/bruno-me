@@ -1,0 +1,35 @@
+info:
+  name: Add Employee Emergency Contact
+  type: http
+  seq: 15
+
+http:
+  method: POST
+  url: "{{baseUrl}}/employees/0291aa7c-bcd9-4ac2-b029-65299835d991/emergency-contact"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "type": "Parent",
+          "relationship": "Father",
+          "firstName": "John",
+          "middleName": "A.",
+          "lastName": "Doe",
+          "language": "English",
+          "emailAddress": "john.doe@example.com",
+          "title": "Sir",
+          "dob": "21-02-2021",
+          "gender": "female"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

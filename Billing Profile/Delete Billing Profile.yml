@@ -1,0 +1,17 @@
+info:
+  name: Delete Billing Profile
+  type: http
+  seq: 6
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/billing-profiles/3df4f73d-0aff-42ca-aced-3b263ca8bb96"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Deletes a billing profile by its UUID.

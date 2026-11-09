@@ -1,0 +1,27 @@
+info:
+  name: Delete Employee Phone
+  type: http
+  seq: 21
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/employees/6410a73e-b163-4eb3-afce-4beae9724e14/phones"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "employeePhoneType": "home",
+        "employeePhone": "123456999"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

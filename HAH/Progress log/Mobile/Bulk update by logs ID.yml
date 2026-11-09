@@ -1,0 +1,144 @@
+info:
+  name: Bulk update by logs ID
+  type: http
+  seq: 3
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/client/habilitation/progress/bulk/by-id/mobile"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |+
+      {
+          "progressLogs": [
+              {
+                  "id": "{{progressid}}",
+                  "notes": "Client completed the second session well and needed fewer prompts.",
+                  "score": 2
+              },
+               {
+                  "id": "f907c384-cae9-41c2-a736-bee98549f533",
+                  "notes": "new Client completed the second session well and needed fewer prompts.",
+                  "location": "Home"
+              }
+          ]
+      }
+
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Bulk update by logs ID
+    request:
+      url: "{{baseUrl}}/client/habilitation/progress/bulk/by-id/mobile"
+      method: PUT
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |+
+          {
+              "progressLogs": [
+                  {
+                      "id": "{{progressid}}",
+                      "notes": "Client completed the second session well and needed fewer prompts.",
+                      "score": 2
+                  },
+                   {
+                      "id": "f907c384-cae9-41c2-a736-bee98549f533",
+                      "notes": "new Client completed the second session well and needed fewer prompts.",
+                      "location": "Home"
+                  }
+              ]
+          }
+
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Content-Length
+          value: "955"
+        - name: ETag
+          value: W/"3bb-VbNKGf+JUYwn+cC1VGZ8KP7+2e8"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Tue, 07 Apr 2026 20:20:28 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": [
+                  {
+                      "id": "85c2de6a-5f38-4aa9-82d9-e02eede74272",
+                      "goalId": "3df8eca8-2dfc-450f-9236-cb6853dc0fad",
+                      "clientId": "155524c4-d308-4265-b489-766ba3e123f7",
+                      "employeeID": "411b2263-8451-471b-8476-6f0cde9d6d94",
+                      "notes": "Client completed the second session well and needed fewer prompts.",
+                      "serviceDate": "2025-01-22T00:00:00.000Z",
+                      "location": "Home",
+                      "score": 2,
+                      "createdAt": "2026-04-07T20:10:44.791Z",
+                      "updatedAt": "2026-04-07T20:15:03.340Z"
+                  },
+                  {
+                      "id": "f907c384-cae9-41c2-a736-bee98549f533",
+                      "goalId": "2720aecf-c5ff-4584-bfe2-86a3cb1816ff",
+                      "clientId": "155524c4-d308-4265-b489-766ba3e123f7",
+                      "employeeID": "411b2263-8451-471b-8476-6f0cde9d6d94",
+                      "notes": "new Client completed the second session well and needed fewer prompts.",
+                      "serviceDate": "2025-01-22T00:00:00.000Z",
+                      "location": "Home",
+                      "score": 4,
+                      "createdAt": "2026-04-07T20:10:44.791Z",
+                      "updatedAt": "2026-04-07T20:20:28.732Z"
+                  }
+              ],
+              "code": null,
+              "timestamp": "2026-04-07T20:20:28.736Z"
+          }

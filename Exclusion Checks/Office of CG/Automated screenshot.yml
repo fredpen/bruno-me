@@ -1,0 +1,33 @@
+info:
+  name: Automated screenshot
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}/employees/exclusion-checks/oig/manual-search/screenshot?firstName=taiwo&lastName=ajayi"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: firstName
+      value: zUBAIR
+      type: query
+      disabled: true
+    - name: lastName
+      value: LATIF
+      type: query
+      disabled: true
+    - name: firstName
+      value: taiwo
+      type: query
+    - name: lastName
+      value: ajayi
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

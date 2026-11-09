@@ -1,0 +1,11 @@
+info:
+  name: Clients
+  type: folder
+  seq: 7
+
+request:
+  auth: inherit
+
+docs:
+  content: The `/me` endpoints let you manage information about the authenticated user.
+  type: text/markdown

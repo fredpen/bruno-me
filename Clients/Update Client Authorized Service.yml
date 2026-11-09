@@ -1,0 +1,159 @@
+info:
+  name: Update Client Authorized Service
+  type: http
+  seq: 24
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/clients/services/548a3f0d-2437-466b-ba5a-23f4c6eed023"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "serviceCode": "SVC123",
+        "authStartDate": "2025-06-01",
+        "authEndDate": "2025-12-31",
+        "contingencyPlan": "Backup Plan A",
+        "contingencyPlanStart": "2025-06-01",
+        "contingencyPlanEnd": "2025-12-31",
+        "payerId": "PAYER789",
+        "payerProgram": "Program X",
+        "authorizationNumber": "AUTH456"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Add Client Payer Information
+    request:
+      url: "{{baseUrl}}/clients/548a3f0d-2437-466b-ba5a-23f4c6eed023/payer-information"
+      method: POST
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "payerId": "string",
+            "payerProgram": "string",
+            "procedureCode": "string",
+            "clientPayerId": "string",
+            "clientEligibilityDateBegin": "2025-01-02",
+            "clientEligibilityDateEnd": "2025-01-02",
+            "clientStatus": "string",
+            "effectiveStartDate": "2025-01-02",
+            "effectiveEndDate": "2025-01-02"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: ETag
+          value: W/"50b-p0ffmih+rDLaxZlTPn72q3Zupxk"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: br
+        - name: Date
+          value: Mon, 24 Mar 2025 07:45:04 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                  "payerId": "string",
+                  "payerProgram": "string",
+                  "procedureCode": "string",
+                  "clientPayerId": "string",
+                  "clientEligibilityDateBegin": "2025-01-02",
+                  "clientEligibilityDateEnd": "2025-01-02",
+                  "clientStatus": "string",
+                  "effectiveStartDate": "2025-01-02",
+                  "effectiveEndDate": "2025-01-02",
+                  "client": {
+                      "id": "548a3f0d-2437-466b-ba5a-23f4c6eed023",
+                      "clientId": "709165",
+                      "clientStatus": "Active",
+                      "clientFirstName": "Tochi",
+                      "language": null,
+                      "clientMiddleInitial": "G",
+                      "clientLastName": "Bedford",
+                      "clientQualifier": "string",
+                      "clientMedicaidId": "A12345671",
+                      "clientIdentifier": "A12345671",
+                      "clientProgram": "string",
+                      "missingMedicaidId": null,
+                      "sequenceID": "2025-03-24T07:38:13.425Z",
+                      "clientCustomId": "A12345671",
+                      "clientOtherId": null,
+                      "clientSSN": null,
+                      "clientTimezone": "UTC+3",
+                      "coordinator": "string",
+                      "lastBilled": null,
+                      "createdAt": "2025-03-24T07:38:13.425Z",
+                      "updatedAt": "2025-03-24T07:38:13.425Z",
+                      "autoClockoutAtMidnightEnabled": false,
+                      "autoSRDetectionEnabled": false,
+                      "autoScheduleGenerationEnabled": false,
+                      "autoScheduleGenerationDetails": null,
+                      "clientPayerInformation": [],
+                      "clientAddress": [],
+                      "authorizations": [],
+                      "clientPhone": [],
+                      "clientDesignee": [],
+                      "clientResponsibleParty": [],
+                      "notes": []
+                  }
+              },
+              "code": null,
+              "timestamp": "2025-03-24T07:45:04.141Z"
+          }

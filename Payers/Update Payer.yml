@@ -1,0 +1,30 @@
+info:
+  name: Update Payer
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/payers/{{payerId}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "name": "United Healthcare (Updated Name)",
+          "isActive": false,
+          "billing": {
+              "holdSplitShiftBilling": true
+          }
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Updates an existing payer record using the `payerId` variable. This request only sends a few fields to demonstrate a partial update.

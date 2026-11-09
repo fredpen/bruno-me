@@ -1,0 +1,56 @@
+info:
+  name: Log an Error
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/issue-reports"
+  headers:
+    - name: Content-Type
+      value: multipart/form-data
+    - name: x-client-api-key
+      value: "{{clientApiKey}}"
+  body:
+    type: multipart-form
+    data:
+      - name: extraInfo
+        type: text
+        value: |
+          [{"key":"userId","value":"6e0b7cdd-fd73-4270-8aed-0b288c845f13"},{"key":"agencyId","value":"105cb571-7769-43b0-801c-bd33af5e269c"},{"key":"baseUrl","value":"https://api.example.com"},{"key":"timestamp","value":"2026-04-21T10:15:00.000Z"},{"key":"errorMessage","value":"Failed to complete visit"},{"key":"httpStatus","value":"500"},{"key":"requestUrl","value":"/visits/complete/123"}]
+        contentType: Text
+      - name: deviceType
+        type: text
+        value: Iphone
+        contentType: Text
+      - name: deviceOs
+        type: text
+        value: Ios
+      - name: appVersion
+        type: text
+        value: "1.2"
+      - name: source
+        type: text
+        value: Mobile
+      - name: attachments
+        type: file
+        value:
+          - /Users/fred/Desktop/beach.jpg
+      - name: title
+        type: text
+        value: title
+      - name: description
+        type: text
+        value: description
+      - name: pageScreen
+        type: text
+        value: pageScreen
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new payer record. The ID of the created payer is automatically saved to the `payerId` collection variable upon a successful (201 Created) response.

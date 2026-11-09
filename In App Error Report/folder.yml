@@ -1,0 +1,7 @@
+info:
+  name: In App Error Report
+  type: folder
+  seq: 20
+
+request:
+  auth: inherit

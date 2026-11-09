@@ -1,0 +1,20 @@
+info:
+  name: Deactivate Employee
+  type: http
+  seq: 6
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/employees/ea96b5e4-67b1-4e4e-a141-4d1f47e5cc4c/deactivate"
+  headers:
+    - name: x-client-api-key
+      value: default
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

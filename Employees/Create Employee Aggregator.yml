@@ -1,0 +1,139 @@
+info:
+  name: Create Employee Aggregator
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/employees"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "ProviderIdentification": {
+              "ProviderID": "140344",
+              "ProviderQualifier": "MedicaidID"
+          },
+          "EmployeeQualifier": "EmployeeSSN",
+          "EmployeeIdentifier": "345678987",
+          "SequenceID": 1759345111964,
+          "EmployeeSSN": "345678987",
+          "EmployeeLastName": "Will",
+          "EmployeeFirstName": "Polo",
+          "EmployeeEmail": "polowilp@yopmail.com"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Create Employee
+    request:
+      url: "{{baseUrl}}/employees"
+      method: POST
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+            "employeeQualifier": "EmployeeSSN",
+            "employeeIdentifier": "123456789",
+            "employeeOtherId": "string",
+            "employeeSSN": "123456789",
+            "employeeStatus": "string",
+            "employeeLastName": "string",
+            "employeeFirstName": "string",
+            "isSupervisor": true,
+            "employeeEmail": "string@example.com",
+            "employeeManagerEmail": "string@example.com",
+            "employeeAPI": "string",
+            "employeePosition": 2,
+            "employeeHireDate": "2025-01-21",
+            "employeeEndDate": "2025-01-21"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Content-Length
+          value: "733"
+        - name: ETag
+          value: W/"2dd-tvNBREPxPgYsH2HlbpPti141B9s"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Mon, 24 Mar 2025 08:04:58 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "employeeQualifier": "EmployeeSSN",
+                  "employeeStatus": "string",
+                  "employeeIdentifier": "123456789",
+                  "employeeOtherId": "string",
+                  "isSupervisor": true,
+                  "employeeSSN": "123456789",
+                  "employeeLastName": "string",
+                  "employeeFirstName": "string",
+                  "employeeEmail": "string@example.com",
+                  "employeeManagerEmail": "string@example.com",
+                  "employeeAPI": "string",
+                  "employeePosition": 2,
+                  "employeeHireDate": "2025-01-21",
+                  "employeeEndDate": "2025-01-21",
+                  "employeeId": null,
+                  "id": "af06932b-283f-4789-876d-e43461db41dc",
+                  "sequenceID": "2025-03-24T08:04:58.014Z",
+                  "createdAt": "2025-03-24T08:04:58.014Z",
+                  "updatedAt": "2025-03-24T08:04:58.014Z",
+                  "autoSRDetectionEnabled": false
+              },
+              "code": null,
+              "timestamp": "2025-03-24T08:04:58.048Z"
+          }

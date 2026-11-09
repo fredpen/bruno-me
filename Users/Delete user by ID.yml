@@ -1,0 +1,25 @@
+info:
+  name: Delete user by ID
+  type: http
+  seq: 8
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/users/:id"
+  headers:
+    - name: x-client-api-key
+      value: default
+  params:
+    - name: id
+      value: "1"
+      type: path
+      description: (Required) The ID of the user to delete.
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Deletes a user by their ID.

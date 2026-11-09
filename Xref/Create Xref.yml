@@ -1,0 +1,55 @@
+info:
+  name: Create Xref
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/xref"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+          "clientIDQualifier": "ClientID",
+          "clientID": "A12345678",
+          "employeeQualifier": "EmployeeSSN",
+          "employeeIdentifier": "9876543210",
+          "xrefStartDate": "2025-09-22",
+          "payerID": "SANDATA_PAYER_01",
+          "payerProgram": "PGM_001",
+          "procedureCode": "G0154",
+          "modifier1": "A1",
+          "modifier2": "B2",
+          "liveIn": true
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // This script runs after the request is complete.
+        // It parses the JSON response and saves the 'id' of the new record
+        // as a collection variable. This allows subsequent requests to use it.
+        try {
+            var jsonData = res.getBody();
+            if (jsonData && jsonData.id) {
+                pm.collectionVariables.set("xrefId", jsonData.id);
+                console.log('Set xrefId to: ' + jsonData.id);
+            }
+        } catch (e) {
+            console.error('Failed to parse response or find ID.', e);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new Cross-Reference (XRef) record. The ID of the created record is automatically saved to a collection variable named `xrefId` for use in other requests.

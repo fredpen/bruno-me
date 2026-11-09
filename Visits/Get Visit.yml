@@ -1,0 +1,27 @@
+info:
+  name: Get Visit
+  type: http
+  seq: 33
+
+http:
+  method: GET
+  url: "{{baseUrl}}/visits/c6894382-d0b4-43ba-a70a-1bf63f96418d/admin"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "FirstName": "John",
+          "LastName": "Doe",
+          "StartTime": "12:00",
+          "EndTime": "16:00"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

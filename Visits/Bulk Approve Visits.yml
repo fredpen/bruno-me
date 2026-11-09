@@ -1,0 +1,28 @@
+info:
+  name: Bulk Approve Visits
+  type: http
+  seq: 16
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/visits/approve"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "visitIds": [
+              "ab8e9114-d277-4271-8b13-62295645db10"
+          ]
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

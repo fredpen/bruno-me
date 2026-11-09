@@ -1,0 +1,18 @@
+info:
+  name: Cancel Visit
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{baseUrl}}/visits/cancel/821d78d1-7fee-4822-8b99-8272418fc768"
+  headers:
+    - name: x-client-api-key
+      value: default
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

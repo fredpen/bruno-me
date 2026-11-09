@@ -1,0 +1,27 @@
+info:
+  name: Add Client Phone
+  type: http
+  seq: 27
+
+http:
+  method: POST
+  url: "{{baseUrl}}/clients/548a3f0d-2437-466b-ba5a-23f4c6eed023/phones"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "clientPhoneType": "string",
+        "clientPhone": "string"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

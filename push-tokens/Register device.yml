@@ -1,0 +1,30 @@
+info:
+  name: Register device
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/push-tokens/register-device"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+          "expoPushToken": "3434jdjwjdwejw",
+          "deviceId": "somerandom-device-id",
+          "platform": "Ios",
+          "deviceLabel": "Fred",
+          "appVersion": "1.03"
+      }
+  auth:
+    type: bearer
+    token: "{{mobileToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

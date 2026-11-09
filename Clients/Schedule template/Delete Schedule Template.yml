@@ -1,0 +1,83 @@
+info:
+  name: Delete Schedule Template
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/clients/schedule-template/fbad4725-de34-47e5-a34c-302f887f732e"
+  headers:
+    - name: x-client-api-key
+      value: default
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Get Schedule Templates Copy
+    request:
+      url: "{{baseUrl}}/clients/schedule-template/3b377493-6eba-4c04-8f21-cfe0cbc8fe3c"
+      method: DELETE
+      headers:
+        - name: x-client-api-key
+          value: default
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Content-Length
+          value: "128"
+        - name: ETag
+          value: W/"80-nw8NskMUQYUgBAp/xKdUCDp2JKI"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Date
+          value: Mon, 24 Mar 2025 08:09:28 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "name": "Week 20"
+              },
+              "code": null,
+              "timestamp": "2025-03-24T08:09:28.259Z"
+          }

@@ -1,0 +1,74 @@
+info:
+  name: Clickup Webhook url
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/issue-reports/clickup/webhook"
+  headers:
+    - name: Content-Type
+      value: application/json
+    - name: x-client-api-key
+      value: "{{clientApiKey}}"
+  body:
+    type: json
+    data: |-
+      {
+        "event": "taskStatusUnmpdated",
+        "history_items": [
+          {
+            "id": "2800763136717140857",
+            "type": 1,
+            "date": "1642734631523",
+            "field": "status",
+            "parent_id": "162641062",
+            "data": {
+              "status_type": "open"
+            },
+            "source": null,
+            "user": {
+              "id": 183,
+              "username": "John",
+              "email": "john@company.com",
+              "color": "#7b68ee",
+              "initials": "J",
+              "profilePicture": null
+            },
+            "before": {
+              "status": null,
+              "color": "#000000",
+              "type": "removed",
+              "orderindex": -1
+            },
+            "after": {
+              "status": "complete",
+              "color": "#f9d900",
+              "orderindex": 0,
+              "type": "open"
+            }
+          }
+        ],
+        "task_id": "868jb9br4",
+        "webhook_id": "7fa3ec74-69a8-4530-a251-8a13730bd204"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: after-response
+      code: |-
+        // Save the ID of the newly created payer to a collection variable
+        if (res.getStatus() === 201) {
+            const responseData = res.getBody();
+            pm.collectionVariables.set("payerId", responseData.id);
+            console.log(`Set payerId to: ${responseData.id}`);
+        }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+docs: Creates a new payer record. The ID of the created payer is automatically saved to the `payerId` collection variable upon a successful (201 Created) response.

@@ -1,0 +1,20 @@
+info:
+  name: Clear 835 records
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}/billing/835/records"
+  headers:
+    - name: x-client-api-key
+      value: default
+    - name: ""
+      value: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

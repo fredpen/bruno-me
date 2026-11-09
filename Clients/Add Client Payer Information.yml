@@ -1,0 +1,639 @@
+info:
+  name: Add Client Payer Information
+  type: http
+  seq: 21
+
+http:
+  method: POST
+  url: "{{baseUrl}}/clients/711be181-badd-408c-8335-4c1de8262c61/payer-information"
+  headers:
+    - name: x-client-api-key
+      value: default
+  body:
+    type: json
+    data: |-
+      {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "payerId": "string",
+        "payerProgram": "string",
+        "procedureCode": "string",
+        "clientPayerId": "string",
+        "clientEligibilityDateBegin": "2025-01-02",
+        "clientEligibilityDateEnd": "2025-01-02",
+        "clientStatus": "string",
+        "effectiveStartDate": "2025-01-02",
+        "effectiveEndDate": "2025-01-02"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: Add Client Payer Information
+    request:
+      url: "{{baseUrl}}/clients/548a3f0d-2437-466b-ba5a-23f4c6eed023/payer-information"
+      method: POST
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "payerId": "string",
+            "payerProgram": "string",
+            "procedureCode": "string",
+            "clientPayerId": "string",
+            "clientEligibilityDateBegin": "2025-01-02",
+            "clientEligibilityDateEnd": "2025-01-02",
+            "clientStatus": "string",
+            "effectiveStartDate": "2025-01-02",
+            "effectiveEndDate": "2025-01-02"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: Content-Security-Policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: Cross-Origin-Opener-Policy
+          value: same-origin
+        - name: Cross-Origin-Resource-Policy
+          value: same-origin
+        - name: Origin-Agent-Cluster
+          value: ?1
+        - name: Referrer-Policy
+          value: no-referrer
+        - name: Strict-Transport-Security
+          value: max-age=31536000; includeSubDomains
+        - name: X-Content-Type-Options
+          value: nosniff
+        - name: X-DNS-Prefetch-Control
+          value: off
+        - name: X-Download-Options
+          value: noopen
+        - name: X-Frame-Options
+          value: SAMEORIGIN
+        - name: X-Permitted-Cross-Domain-Policies
+          value: none
+        - name: X-XSS-Protection
+          value: "0"
+        - name: Access-Control-Allow-Origin
+          value: "*"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: ETag
+          value: W/"50b-p0ffmih+rDLaxZlTPn72q3Zupxk"
+        - name: Vary
+          value: Accept-Encoding
+        - name: Content-Encoding
+          value: br
+        - name: Date
+          value: Mon, 24 Mar 2025 07:45:04 GMT
+        - name: Connection
+          value: keep-alive
+        - name: Keep-Alive
+          value: timeout=5
+        - name: Transfer-Encoding
+          value: chunked
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                  "payerId": "string",
+                  "payerProgram": "string",
+                  "procedureCode": "string",
+                  "clientPayerId": "string",
+                  "clientEligibilityDateBegin": "2025-01-02",
+                  "clientEligibilityDateEnd": "2025-01-02",
+                  "clientStatus": "string",
+                  "effectiveStartDate": "2025-01-02",
+                  "effectiveEndDate": "2025-01-02",
+                  "client": {
+                      "id": "548a3f0d-2437-466b-ba5a-23f4c6eed023",
+                      "clientId": "709165",
+                      "clientStatus": "Active",
+                      "clientFirstName": "Tochi",
+                      "language": null,
+                      "clientMiddleInitial": "G",
+                      "clientLastName": "Bedford",
+                      "clientQualifier": "string",
+                      "clientMedicaidId": "A12345671",
+                      "clientIdentifier": "A12345671",
+                      "clientProgram": "string",
+                      "missingMedicaidId": null,
+                      "sequenceID": "2025-03-24T07:38:13.425Z",
+                      "clientCustomId": "A12345671",
+                      "clientOtherId": null,
+                      "clientSSN": null,
+                      "clientTimezone": "UTC+3",
+                      "coordinator": "string",
+                      "lastBilled": null,
+                      "createdAt": "2025-03-24T07:38:13.425Z",
+                      "updatedAt": "2025-03-24T07:38:13.425Z",
+                      "autoClockoutAtMidnightEnabled": false,
+                      "autoSRDetectionEnabled": false,
+                      "autoScheduleGenerationEnabled": false,
+                      "autoScheduleGenerationDetails": null,
+                      "clientPayerInformation": [],
+                      "clientAddress": [],
+                      "authorizations": [],
+                      "clientPhone": [],
+                      "clientDesignee": [],
+                      "clientResponsibleParty": [],
+                      "notes": []
+                  }
+              },
+              "code": null,
+              "timestamp": "2025-03-24T07:45:04.141Z"
+          }
+  - name: Add Client Payer Information
+    request:
+      url: "{{baseUrl}}/clients/711be181-badd-408c-8335-4c1de8262c61/payer-information"
+      method: POST
+      headers:
+        - name: x-client-api-key
+          value: default
+      body:
+        type: json
+        data: |-
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "payerId": "string",
+            "payerProgram": "string",
+            "procedureCode": "string",
+            "clientPayerId": "string",
+            "clientEligibilityDateBegin": "2025-01-02",
+            "clientEligibilityDateEnd": "2025-01-02",
+            "clientStatus": "string",
+            "effectiveStartDate": "2025-01-02",
+            "effectiveEndDate": "2025-01-02"
+          }
+    response:
+      status: 201
+      statusText: Created
+      headers:
+        - name: content-security-policy
+          value: "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+        - name: cross-origin-opener-policy
+          value: same-origin
+        - name: cross-origin-resource-policy
+          value: same-origin
+        - name: origin-agent-cluster
+          value: ?1
+        - name: referrer-policy
+          value: no-referrer
+        - name: strict-transport-security
+          value: max-age=31536000; includeSubDomains
+        - name: x-content-type-options
+          value: nosniff
+        - name: x-dns-prefetch-control
+          value: off
+        - name: x-download-options
+          value: noopen
+        - name: x-frame-options
+          value: SAMEORIGIN
+        - name: x-permitted-cross-domain-policies
+          value: none
+        - name: x-xss-protection
+          value: "0"
+        - name: access-control-allow-origin
+          value: "*"
+        - name: content-type
+          value: application/json; charset=utf-8
+        - name: etag
+          value: W/"2390-vxnpXv+UecnGZxQIf4OgdE5RxQQ"
+        - name: vary
+          value: Accept-Encoding
+        - name: content-encoding
+          value: br
+        - name: date
+          value: Tue, 10 Jun 2025 12:10:50 GMT
+        - name: connection
+          value: keep-alive
+        - name: keep-alive
+          value: timeout=5
+        - name: transfer-encoding
+          value: chunked
+        - name: server
+          value: Fly/3e8bebaf (2025-06-05)
+        - name: via
+          value: 1.1 fly.io, 1.1 fly.io
+        - name: fly-request-id
+          value: 01JXCW05GE55XAY28B0FSJN4A5-lhr
+      body:
+        type: json
+        data: |-
+          {
+              "status": "success",
+              "message": "Request successful",
+              "data": {
+                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                  "payerId": "string",
+                  "payerProgram": "string",
+                  "procedureCode": "string",
+                  "clientPayerId": "string",
+                  "clientEligibilityDateBegin": "2025-01-02",
+                  "clientEligibilityDateEnd": "2025-01-02",
+                  "clientStatus": "string",
+                  "effectiveStartDate": "2025-01-02",
+                  "effectiveEndDate": "2025-01-02",
+                  "client": {
+                      "id": "711be181-badd-408c-8335-4c1de8262c61",
+                      "clientId": "172638",
+                      "clientStatus": "Active",
+                      "clientFirstName": "Tochi",
+                      "language": null,
+                      "clientMiddleInitial": "Jamal",
+                      "clientLastName": "Jackson",
+                      "clientQualifier": "1",
+                      "clientMedicaidId": "A12312313",
+                      "clientIdentifier": "A12312313",
+                      "clientProgram": "AHC",
+                      "missingMedicaidId": null,
+                      "sequenceId": "2025-04-03T20:03:06.401Z",
+                      "clientCustomId": "A12312313",
+                      "clientOtherId": null,
+                      "clientSSN": null,
+                      "clientTimezone": "US/Arizona",
+                      "coordinator": "Henry Joel",
+                      "lastBilled": null,
+                      "createdAt": "2025-04-03T20:03:06.401Z",
+                      "contingencyPlan": null,
+                      "sentToAggregator": false,
+                      "updatedAt": "2025-05-13T02:42:24.102Z",
+                      "autoClockoutAtMidnightEnabled": true,
+                      "autoSRDetectionEnabled": true,
+                      "autoScheduleGenerationEnabled": true,
+                      "autoScheduleGenerationDetails": {
+                          "daysThreshold": 3,
+                          "templateInstances": 3
+                      },
+                      "clientPayerInformation": [],
+                      "clientAddress": [
+                          {
+                              "id": "b8bad457-5f96-4ce9-8896-6ea761b26536",
+                              "clientAddressType": "home",
+                              "clientAddressIsPrimary": false,
+                              "clientAddressLine1": "Josephsplatz",
+                              "clientAddressLine2": "",
+                              "clientCounty": "Oberbayern",
+                              "clientCity": "München",
+                              "clientState": "Bayern",
+                              "clientZip": "80798",
+                              "clientAddressLongitude": "0",
+                              "clientAddressLatitude": "0"
+                          }
+                      ],
+                      "authorization": [
+                          {
+                              "id": "a1653ae9-7934-4fa5-af03-9ac3e435ba82",
+                              "providerName": null,
+                              "clientDistrictCode": null,
+                              "wellskyCaseNo": "213313123",
+                              "clientAHCCCSId": null,
+                              "eligibility": null,
+                              "clientDiagnosis": null,
+                              "clientDiagnosisDescription": null,
+                              "focusAuthId": "123123131",
+                              "wellSkyAuthId": "4242424",
+                              "authStatus": "near expiry",
+                              "focusServiceCode": null,
+                              "serviceCode": "S5181",
+                              "description": null,
+                              "lastBilledDate": null,
+                              "authStartDate": "2025-06-03",
+                              "authEndDate": "2025-06-30",
+                              "unitType": null,
+                              "authorizedUnits": null,
+                              "authorizedHours": null,
+                              "paidUnits": "11",
+                              "paidHours": null,
+                              "daysAuthEnd": "25",
+                              "availableUnits": "101",
+                              "availableHours": null,
+                              "usedHours": "2.75",
+                              "clientWorker": null,
+                              "employeeEmail": null,
+                              "employeeWorkPhone": null,
+                              "azeipTeamLeadId": null,
+                              "ahcccsVendorDemographicVendorName": null,
+                              "supportCoordinator1": null,
+                              "payerId": null,
+                              "payerProgram": null,
+                              "procedureCode": null,
+                              "clientPayerId": null,
+                              "authorizationNumber": null,
+                              "serviceType": "S5181",
+                              "format": null,
+                              "clientEligibilityDateBegin": null,
+                              "clientEligibilityDateEnd": null,
+                              "clientStatus": null,
+                              "averageHoursLast30Days": "0.00",
+                              "createdAt": "2025-06-05T22:47:03.669Z",
+                              "updatedAt": "2025-06-05T22:47:03.669Z"
+                          },
+                          {
+                              "id": "50159cfb-cb8a-4c3c-90a3-a4e14b4ad566",
+                              "providerName": null,
+                              "clientDistrictCode": null,
+                              "wellskyCaseNo": "123i13i1",
+                              "clientAHCCCSId": null,
+                              "eligibility": null,
+                              "clientDiagnosis": null,
+                              "clientDiagnosisDescription": null,
+                              "focusAuthId": "3123131",
+                              "wellSkyAuthId": "424342",
+                              "authStatus": "near expiry",
+                              "focusServiceCode": null,
+                              "serviceCode": "S5151",
+                              "description": null,
+                              "lastBilledDate": null,
+                              "authStartDate": "2025-06-06",
+                              "authEndDate": "2025-06-18",
+                              "unitType": null,
+                              "authorizedUnits": null,
+                              "authorizedHours": null,
+                              "paidUnits": "231",
+                              "paidHours": null,
+                              "daysAuthEnd": "13",
+                              "availableUnits": "13.321",
+                              "availableHours": null,
+                              "usedHours": "57.75",
+                              "clientWorker": null,
+                              "employeeEmail": null,
+                              "employeeWorkPhone": null,
+                              "azeipTeamLeadId": null,
+                              "ahcccsVendorDemographicVendorName": null,
+                              "supportCoordinator1": null,
+                              "payerId": null,
+                              "payerProgram": null,
+                              "procedureCode": null,
+                              "clientPayerId": null,
+                              "authorizationNumber": null,
+                              "serviceType": "S5151",
+                              "format": null,
+                              "clientEligibilityDateBegin": null,
+                              "clientEligibilityDateEnd": null,
+                              "clientStatus": null,
+                              "averageHoursLast30Days": "0.00",
+                              "createdAt": "2025-06-05T22:54:04.593Z",
+                              "updatedAt": "2025-06-05T22:54:04.593Z"
+                          },
+                          {
+                              "id": "e317a571-ba4a-4ab8-a01e-b0db6f5ebf21",
+                              "providerName": null,
+                              "clientDistrictCode": null,
+                              "wellskyCaseNo": null,
+                              "clientAHCCCSId": null,
+                              "eligibility": null,
+                              "clientDiagnosis": null,
+                              "clientDiagnosisDescription": null,
+                              "focusAuthId": "1213131",
+                              "wellSkyAuthId": "4142312",
+                              "authStatus": "Near Expiry",
+                              "focusServiceCode": null,
+                              "serviceCode": "S9124",
+                              "description": null,
+                              "lastBilledDate": null,
+                              "authStartDate": "2025-06-06",
+                              "authEndDate": "2025-06-12",
+                              "unitType": null,
+                              "authorizedUnits": null,
+                              "authorizedHours": "122",
+                              "paidUnits": null,
+                              "paidHours": "1",
+                              "daysAuthEnd": "5",
+                              "availableUnits": null,
+                              "availableHours": "11",
+                              "usedHours": null,
+                              "clientWorker": null,
+                              "employeeEmail": null,
+                              "employeeWorkPhone": null,
+                              "azeipTeamLeadId": null,
+                              "ahcccsVendorDemographicVendorName": null,
+                              "supportCoordinator1": null,
+                              "payerId": null,
+                              "payerProgram": null,
+                              "procedureCode": null,
+                              "clientPayerId": null,
+                              "authorizationNumber": null,
+                              "serviceType": "S9124",
+                              "format": null,
+                              "clientEligibilityDateBegin": null,
+                              "clientEligibilityDateEnd": null,
+                              "clientStatus": null,
+                              "averageHoursLast30Days": "0.00",
+                              "createdAt": "2025-06-07T21:30:46.406Z",
+                              "updatedAt": "2025-06-07T21:30:46.406Z"
+                          },
+                          {
+                              "id": "b64f97a2-61a5-40d9-acd0-2cf5378dce40",
+                              "providerName": null,
+                              "clientDistrictCode": null,
+                              "wellskyCaseNo": null,
+                              "clientAHCCCSId": null,
+                              "eligibility": null,
+                              "clientDiagnosis": null,
+                              "clientDiagnosisDescription": null,
+                              "focusAuthId": "2123312",
+                              "wellSkyAuthId": "3123131",
+                              "authStatus": null,
+                              "focusServiceCode": null,
+                              "serviceCode": "S9123",
+                              "description": null,
+                              "lastBilledDate": null,
+                              "authStartDate": "2025-06-04",
+                              "authEndDate": "2025-06-10",
+                              "unitType": null,
+                              "authorizedUnits": null,
+                              "authorizedHours": "211",
+                              "paidUnits": null,
+                              "paidHours": "12",
+                              "daysAuthEnd": "3",
+                              "availableUnits": null,
+                              "availableHours": "11",
+                              "usedHours": null,
+                              "clientWorker": null,
+                              "employeeEmail": null,
+                              "employeeWorkPhone": null,
+                              "azeipTeamLeadId": null,
+                              "ahcccsVendorDemographicVendorName": null,
+                              "supportCoordinator1": null,
+                              "payerId": null,
+                              "payerProgram": null,
+                              "procedureCode": null,
+                              "clientPayerId": null,
+                              "authorizationNumber": null,
+                              "serviceType": "S9123",
+                              "format": null,
+                              "clientEligibilityDateBegin": null,
+                              "clientEligibilityDateEnd": null,
+                              "clientStatus": null,
+                              "averageHoursLast30Days": "0.00",
+                              "createdAt": "2025-06-07T21:32:26.891Z",
+                              "updatedAt": "2025-06-07T21:32:26.891Z"
+                          },
+                          {
+                              "id": "49424f0d-8eed-405b-b1ca-0c58db3aa599",
+                              "providerName": null,
+                              "clientDistrictCode": null,
+                              "wellskyCaseNo": null,
+                              "clientAHCCCSId": null,
+                              "eligibility": null,
+                              "clientDiagnosis": null,
+                              "clientDiagnosisDescription": null,
+                              "focusAuthId": "1231231",
+                              "wellSkyAuthId": "3213131",
+                              "authStatus": null,
+                              "focusServiceCode": null,
+                              "serviceCode": "S9123",
+                              "description": null,
+                              "lastBilledDate": "2025-06-03",
+                              "authStartDate": "2025-06-02",
+                              "authEndDate": "2025-06-09",
+                              "unitType": null,
+                              "authorizedUnits": null,
+                              "authorizedHours": "100",
+                              "paidUnits": null,
+                              "paidHours": "2",
+                              "daysAuthEnd": "1",
+                              "availableUnits": null,
+                              "availableHours": "11",
+                              "usedHours": null,
+                              "clientWorker": null,
+                              "employeeEmail": null,
+                              "employeeWorkPhone": null,
+                              "azeipTeamLeadId": null,
+                              "ahcccsVendorDemographicVendorName": null,
+                              "supportCoordinator1": null,
+                              "payerId": null,
+                              "payerProgram": null,
+                              "procedureCode": null,
+                              "clientPayerId": null,
+                              "authorizationNumber": null,
+                              "serviceType": "S9123",
+                              "format": null,
+                              "clientEligibilityDateBegin": null,
+                              "clientEligibilityDateEnd": null,
+                              "clientStatus": null,
+                              "averageHoursLast30Days": "0.00",
+                              "createdAt": "2025-06-09T15:50:02.994Z",
+                              "updatedAt": "2025-06-09T15:50:02.994Z"
+                          }
+                      ],
+                      "clientPhone": [
+                          {
+                              "id": "242dc7b3-4c09-42ef-845b-12e898d23c91",
+                              "clientPhoneType": "Home",
+                              "clientPhone": "(081) 664-0649"
+                          },
+                          {
+                              "id": "95958aef-b022-4c51-85e2-4ca93b534ffc",
+                              "clientPhoneType": "Home",
+                              "clientPhone": "(081) 664-6400"
+                          }
+                      ],
+                      "clientDesignee": [
+                          {
+                              "id": "5bbb4b84-4e7c-4f8e-ab4b-b9343c2efcb7",
+                              "clientDesigneeFirstName": "Victor",
+                              "clientDesigneeLastName": "Whyte",
+                              "clientDesigneeEmail": "victor@gmail.com",
+                              "clientDesigneePhone": null,
+                              "clientDesigneeStatus": "active",
+                              "clientDesigneeStartDate": "2025-04-03",
+                              "clientDesigneeEndDate": "2025-04-17",
+                              "clientDesigneeRelationship": "Self"
+                          }
+                      ],
+                      "clientAuthorizedService": [],
+                      "clientEmergencyContact": [
+                          {
+                              "id": "a8a97a8b-ff8e-4b92-8013-a5f741ef03b6",
+                              "type": "NCM",
+                              "relationship": "NCM",
+                              "firstName": "Hass",
+                              "middleName": "KKa",
+                              "lastName": "adii",
+                              "dob": null,
+                              "gender": "male",
+                              "title": null,
+                              "language": "English",
+                              "emailAddress": "goog@gmail.com",
+                              "clientContactAddress": [
+                                  {
+                                      "id": "f875e25e-0255-404d-9cd8-7b3c546ce1b1",
+                                      "addressType": "home",
+                                      "addressIsPrimary": true,
+                                      "addressLine1": "Musa Mamman Cresent",
+                                      "addressLine2": null,
+                                      "county": "oo",
+                                      "city": "Kubwa",
+                                      "state": "Federal Capital Territory",
+                                      "zip": "901101",
+                                      "addressLongitude": "7.3978488",
+                                      "addressLatitude": "9.133402499999999"
+                                  }
+                              ],
+                              "clientContactPhone": [
+                                  {
+                                      "id": "744cb200-063f-453d-a930-b96fd1df4331",
+                                      "phoneType": "Home",
+                                      "phone": "(081) 666-4064"
+                                  }
+                              ]
+                          },
+                          {
+                              "id": "b724ee9d-6f7f-4eda-957b-d55a3ab8d0b2",
+                              "type": "NEI",
+                              "relationship": "C",
+                              "firstName": "James",
+                              "middleName": "",
+                              "lastName": "Patterson",
+                              "dob": null,
+                              "gender": "male",
+                              "title": null,
+                              "language": "English",
+                              "emailAddress": "james@gmail.com",
+                              "clientContactAddress": [
+                                  {
+                                      "id": "3039ee1d-0a7f-4968-88dc-dadd86e5c646",
+                                      "addressType": "home",
+                                      "addressIsPrimary": true,
+                                      "addressLine1": "Musa Mamman Road",
+                                      "addressLine2": null,
+                                      "county": "Abuja Municipal Area Council",
+                                      "city": "Kubwa",
+                                      "state": "Federal Capital Territory",
+                                      "zip": "901101",
+                                      "addressLongitude": "7.3976723",
+                                      "addressLatitude": "9.128535"
+                                  }
+                              ],
+                              "clientContactPhone": [
+                                  {
+                                      "id": "d71982c5-64f2-42fa-9128-7bac83d614f9",
+                                      "phoneType": "Home",
+                                      "phone": "(081) 664-6459"
+                                  }
+                              ]
+                          }
+                      ],
+                      "notes": []
+                  }
+              },
+              "code": null,
+              "timestamp": "2025-06-10T12:10:50.462Z"
+          }
